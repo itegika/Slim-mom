@@ -1,34 +1,24 @@
-@mixin media-rule($range) {
-  $mobile: $mobile;
-  $tablet: $tablet;
-  $desktop: $desktop;
-
-  @if $range == mobile-only {
-    @media (max-width: #{$tablet - 1}) {
-      @content;
-    }
-  } @else if $range == mobile {
-    @media (min-width: $mobile) {
-      @content;
-    }
-  } @else if $range == tablet-only {
-    @media (max-width: #{$desktop - 1}) {
-      @content;
-    }
-  } @else if $range == tablet {
-    @media (min-width: $tablet) {
-      @content;
-    }
-  } @else if $range == desktop {
-    @media (min-width: $desktop) {
-      @content;
-    }
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: $desktop - 1) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: $tablet - 1) {
+    @content;
   }
 }
 
-//example:
-// @include media-rule(tablet) {
-//   margin-bottom: 53px;
+// example:
+// body {
+// //  @include tablet {
+//       background-color: purple;
+//    }
 // }
 
 @function getColor($key) {

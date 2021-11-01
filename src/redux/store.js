@@ -10,9 +10,6 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { PersistGate } from 'redux-persist/integration/react'
-
-import App from './App'
 import rootReducer from './reducers'
 
 const persistConfig = {
@@ -23,7 +20,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-const store = configureStore({
+export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -33,4 +30,4 @@ const store = configureStore({
     }),
 })
 
-let persistor = persistStore(store)
+export let persistor = persistStore(store)

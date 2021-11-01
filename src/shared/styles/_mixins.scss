@@ -1,7 +1,7 @@
 @mixin media-rule($range) {
-  $mobile: $min-width-mobile;
-  $tablet: $min-width-tablet;
-  $desktop: $min-width-desktop;
+  $mobile: $mobile;
+  $tablet: $tablet;
+  $desktop: $desktop;
 
   @if $range == mobile-only {
     @media (max-width: #{$tablet - 1}) {
@@ -47,8 +47,21 @@
 //   font-family: getFont('text-primary');
 // }
 
-@mixin center {
+@mixin flex($main-axis: flex-start, $main-cross: stretch) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+
+  @if $main-axis != flex-start {
+    justify-content: $main-axis;
+  }
+
+  @if $main-cross != stretch {
+    align-items: $main-cross;
+  }
 }
+
+// example:
+// body {
+//  @include flex(center, center);
+//  margin-bottom: 53px;
+// }

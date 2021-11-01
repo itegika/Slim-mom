@@ -1,0 +1,40 @@
+@mixin _1280 {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin _320 {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// Using
+//.div {
+//   @include _1170 {
+//       @content;
+//   }
+//}

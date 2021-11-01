@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore,combineReducers } from '@reduxjs/toolkit'
 import {
   persistStore,
   persistReducer,
@@ -10,13 +10,22 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import rootReducer from './reducers'
+
 
 const persistConfig = {
-  key: 'root',
-  version: 1,
+  key: 'user',
   storage,
+  whitelist: ['token'],
 }
+
+//add reducers from yours files
+const rootReducer = combineReducers({
+  calculator: null,
+  auth: null,
+  products: null,
+})
+ 
+
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

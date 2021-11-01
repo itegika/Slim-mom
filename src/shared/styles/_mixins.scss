@@ -1,40 +1,54 @@
-@mixin _1280 {
-  @media (max-width: 1280px) {
-    @content;
+@mixin media-rule($range) {
+  $mobile: $min-width-mobile;
+  $tablet: $min-width-tablet;
+  $desktop: $min-width-desktop;
+
+  @if $range == mobile-only {
+    @media (max-width: #{$tablet - 1}) {
+      @content;
+    }
+  } @else if $range == mobile {
+    @media (min-width: $mobile) {
+      @content;
+    }
+  } @else if $range == tablet-only {
+    @media (max-width: #{$desktop - 1}) {
+      @content;
+    }
+  } @else if $range == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  } @else if $range == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
   }
 }
 
-@mixin _768 {
-  @media (max-width: 768px) {
-    @content;
-  }
+//example:
+// @include media-rule(tablet) {
+//   margin-bottom: 53px;
+// }
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
+// body {
+//   background-color: getColor('text-primary');
+// }
+
+@function getFont($key) {
+  @return map-get($fonts, $key);
 }
 
-@mixin _480 {
-  @media (max-width: 480px) {
-    @content;
-  }
-}
-
-@mixin _320 {
-  @media (min-width: 320px) {
-    @content;
-  }
-}
-
-@mixin reset {
-  margin: 0;
-  padding: 0;
-}
+// example:
+// body {
+//   font-family: getFont('text-primary');
+// }
 
 @mixin center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-// Using
-//.div {
-//   @include _1170 {
-//       @content;
-//   }
-//}

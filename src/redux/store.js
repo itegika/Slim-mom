@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -17,11 +17,20 @@ const persistConfig = {
   whitelist: ["token"],
 };
 
+const initialState = {
+  user: { name: null, email: null },
+};
+const authSlice = createSlice({
+  name: "auth",
+  initialState,
+  extraReducers: {},
+});
+
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(persistConfig, null),
-    calendar: null,
-    notAllowedProducts: null,
+    auth: persistReducer(persistConfig, authSlice.reducer),
+    // calendar: null,
+    // notAllowedProducts: null,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

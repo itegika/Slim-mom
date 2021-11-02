@@ -14,6 +14,13 @@
   }
 }
 
+// example:
+// body {
+// //  @include tablet {
+//       background-color: purple;
+//    }
+// }
+
 @mixin flex($main-axis: flex-start, $main-cross: stretch) {
   display: flex;
   flex-wrap: wrap;

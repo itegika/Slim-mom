@@ -1,5 +1,5 @@
 import {generate} from "shortid";
-
+import PropTypes from 'prop-types';
 import styles from "./TextField.module.scss";
 
 const TextField = ({label, ...field})=>{
@@ -16,6 +16,10 @@ const TextField = ({label, ...field})=>{
     )
 };
 
+TextField.propTypes = {
+    label: PropTypes.string,
+    field: PropTypes.object,
+}
 
 
 export default TextField;

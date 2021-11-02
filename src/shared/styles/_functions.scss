@@ -4,12 +4,3 @@
 // body {
 //   background-color: getColor('text-primary');
 // }
-
-@function getFont($key) {
-  @return map-get($fonts, $key);
-}
-
-// example:
-// body {
-//   font-family: getFont('text-primary');
-// }

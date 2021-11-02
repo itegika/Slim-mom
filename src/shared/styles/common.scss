@@ -2,22 +2,20 @@
 @import "reset";
 
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 480px;
+  width: 320px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
   @include tablet {
     .container {
-      width: 738px;
+      width: 612px;
       padding: 0;
     }
   }
 
   @include desktop {
     .container {
-      width: 1250px;
+      width: 1100px;
     }
   }
 }

@@ -1,0 +1,32 @@
+
+input {
+    margin: 0;
+  }
+  /* Text Input */
+ 
+  .formInput {
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #9b9faa;
+  
+    margin: 0;
+    padding-bottom: 10px;
+  
+    border: none;
+    border-bottom: 1px solid rgb(245, 241, 241);
+  }
+  .formInput::placeholder {
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #9b9faa;
+  }
+  
+  

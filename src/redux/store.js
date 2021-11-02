@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -17,14 +17,11 @@ const persistConfig = {
   whitelist: ["token"],
 };
 
-//add reducers
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, null),
-    dailyRate: null,
     calendar: null,
-    loader: null,
-    products: null,
+    notAllowedProducts: null,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -13,10 +13,10 @@
   letter-spacing: 0.04em;
 }
 .primary {
-  background-color: #fc842d;
-  color: #ffffff;
+  background-color: var(--accent);
+  color: var(--text-white);
 }
 .secondary {
-  background-color: #ffffff;
-  color: #fc842d;
+  background-color: var(--bg-primary);
+  color: var(--accent);
 }

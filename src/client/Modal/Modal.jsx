@@ -3,7 +3,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-const ModalWindow = document.querySelector('#modal');
+const createModal = document.querySelector('#modal');
 
 const Modal = ({ onClose, children }) => {
   useEffect(() => {
@@ -25,28 +25,27 @@ const Modal = ({ onClose, children }) => {
 
   const handleCloseButtonClick = e => {
     if (e.target.tagName === 'BUTTON') {
-      console.log(e.target.tagName);
       onClose();
     }
   };
 
   return createPortal(
     <div
-      className={styles}
+      className={styles.modalMainContainerOverlay}
       onClick={handleBackdropClick}
     >
-      <div className={styles}>
+      <div className={styles.modalMainContainer}>
         <button
-          className={styles}
+          className={styles.closeModalBtn}
           onClick={handleCloseButtonClick}
         />
-        <div className={styles}>
+        <div className={styles.mobileBackground}>
           <button
-            className={styles}
+            className={styles.closeModalBtnMobile}
             onClick={handleCloseButtonClick}
           />
         </div>
-        <div className={styles}>{children}</div>
+        <div className={styles.container}>{children}</div>
       </div>
     </div>,
     document.getElementById('modal'),

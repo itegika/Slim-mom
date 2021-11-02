@@ -6,17 +6,17 @@
   align-items: center;
   border-radius: 30px;
   border-style: none;
-  font-family: Verdana, sans-serif;
+  font-family: $font-primary, sans-serif;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.04em;
 }
 .primary {
-  background-color: var(--accent);
-  color: var(--text-white);
+  background-color: getColor("accent");
+  color: getColor("text-white");
 }
 .secondary {
-  background-color: var(--bg-primary);
-  color: var(--accent);
+  background-color: getColor("bg-primary");
+  color: getColor("accent");
 }

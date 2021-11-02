@@ -25,7 +25,6 @@ export const store = configureStore({
     calendar: null,
     loader: null,
     products: null,
-    error: null,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

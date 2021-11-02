@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -8,29 +8,30 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-import { PersistGate } from 'redux-persist/integration/react'
-
-import App from './App'
-import rootReducer from './reducers'
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
-  key: 'root',
-  version: 1,
+  key: "user",
   storage,
-}
+  whitelist: ["token"],
+};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
-
-const store = configureStore({
-  reducer: persistedReducer,
+//add reducers
+export const store = configureStore({
+  reducer: {
+    auth: persistReducer(persistConfig, null),
+    dailyRate: null,
+    calendar: null,
+    loader: null,
+    products: null,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-})
+});
 
-let persistor = persistStore(store)
+export let persistor = persistStore(store);

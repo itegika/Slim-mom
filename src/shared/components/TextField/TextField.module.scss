@@ -1,5 +1,7 @@
 @import "../../styles/common.scss";
+
 .formInput {
+  width: 290px;
   font-family: $font-primary;
   font-weight: 700;
   font-size: 14px;
@@ -10,6 +12,12 @@
   padding: 10px;
   border: none;
   border-bottom: 1px solid getColor("bg-secondary");
+  @include tablet {
+    width: 240px;
+  }
+  @include desktop {
+    width: 240px;
+  }
 
   &::placeholder {
     font-family: $font-primary;

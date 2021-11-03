@@ -1,6 +1,8 @@
 import { nanoid } from "nanoid";
-import styles from "./RadioField.module.scss";
 import PropTypes from "prop-types";
+
+import styles from "./RadioField.module.scss";
+
 const RadioField = ({ onChange, required, label, name }) => {
   const id = nanoid();
   return (
@@ -28,5 +30,6 @@ RadioField.propTypes = {
   onChange: PropTypes.func,
   required: PropTypes.bool,
   label: PropTypes.string,
+  name: PropTypes.string,
 };
 export default RadioField;

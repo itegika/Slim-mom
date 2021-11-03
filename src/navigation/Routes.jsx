@@ -24,7 +24,7 @@ const Routes = () => {
         <PublicRoute
           restricted
           exact
-          path="/registaration"
+          path="/registration"
           redirectTo="/calculator"
         >
           <RegisterPage />

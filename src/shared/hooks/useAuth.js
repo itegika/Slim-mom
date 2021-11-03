@@ -1,7 +1,16 @@
-import {useSelector} from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { fetchToken } from "../../redux/auth/auth-selectors";
 
-const useAuth = (initialState)=> {
-
-}
+export const useAuth = () => {
+  const token = useSelector(fetchToken);
+  useEffect(() => {
+    if (token) {
+      return true;
+    } else {
+      return false;
+    }
+  }, [token]);
+};
 
 export default useAuth;

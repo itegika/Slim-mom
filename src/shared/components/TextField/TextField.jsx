@@ -1,10 +1,10 @@
-import {generate} from "shortid";
+import { nanoid } from "nanoid";
 import PropTypes from 'prop-types';
 import styles from "./TextField.module.scss";
 
 
 const TextField = ({label, ...field})=>{
-    const id = generate();
+    const id = nanoid();
     if (field.required) {
         field.placeholder += " *"
     }
@@ -21,6 +21,8 @@ const TextField = ({label, ...field})=>{
     )
 };
 
+
+
 TextField.defaultProps = {
     required:false,
     type: "text",
@@ -33,6 +35,7 @@ TextField.propTypes = {
     placeholder: PropTypes.string,
     required: PropTypes.bool,
     value: PropTypes.string,
+    name:PropTypes.string.isRequired,
 }
 
 

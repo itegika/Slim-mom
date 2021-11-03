@@ -1,9 +1,5 @@
-import axios from "axios";
+import { instance } from "./auth";
 
-const instance = axios.create({
-  baseURL: "https://slimmom-backend.goit.global/daily-rate/",
-});
-
-export const getDailyRate = async ({ params }) => {
-  return instance.post("/daily-rate", { params });
+export const getDailyRate = async (options) => {
+  return instance.post("/daily-rate", options);
 };

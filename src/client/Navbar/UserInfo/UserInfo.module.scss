@@ -1,0 +1,25 @@
+@import "src/shared/styles/common";
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  background-color: getColor("bg-user-menu");
+}
+
+.userInfo {
+  padding: 15px;
+}
+
+.name {
+  padding-right: 15px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: getColor("text-primary");
+  border-right: 2px solid getColor("border-color");
+}
+
+.btn {
+  color: getColor("text-secondary");
+  cursor: pointer;
+}

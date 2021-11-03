@@ -10,11 +10,8 @@ const TextField = ({ label, ...field }) => {
 
   return (
     <div className={styles.formGroup}>
-      {label && (
-        <label htmlFor={id}>
-          <input className={styles.formInput} {...field} id={id} />
-        </label>
-      )}
+      {label && <label htmlFor={id}>{label}</label>}
+      <input className={styles.formInput} {...field} id={id} />
     </div>
   );
 };

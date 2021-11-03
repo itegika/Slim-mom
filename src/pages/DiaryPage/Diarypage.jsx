@@ -1,7 +1,7 @@
-import styles from "./DiaryPage.module.scss"
+import styles from "./DiaryPage.module.scss";
 
-const DiaryPage = ()=> {
-    return <div></div>
-}
+const DiaryPage = () => {
+  return <div>DiaryPage</div>;
+};
 
-export default DiaryPage
+export default DiaryPage;

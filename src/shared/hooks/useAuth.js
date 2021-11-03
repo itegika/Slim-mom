@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { fetchToken } from "../../redux/auth/auth-selectors";
 
-export const useAuth = (initialState) => {
-  const [data, setData] = useState(initialState);
+export const useAuth = () => {
+  const token = useSelector(fetchToken);
   useEffect(() => {
-    if (data) {
-      console.log("user is logged in");
-      setData(data);
+    if (token) {
       return true;
     } else {
-      console.log("user is logged out");
       return false;
     }
-  }, [data]);
+  }, [token]);
 };
 
 export default useAuth;

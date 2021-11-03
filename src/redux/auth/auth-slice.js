@@ -7,28 +7,26 @@ const initialState = {
     email: "",
   },
   token: "",
-  error: "",
+  error: null,
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   extraReducers: {
-    [authOperations.register.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+    [authOperations.register.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
     },
-    [authOperations.register.rejected](state, action) {
-      state.error = action.payload;
-      alert(state.error);
+    [authOperations.register.rejected](state, { payload }) {
+      state.error = payload;
     },
-    [authOperations.logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+    [authOperations.logIn.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
     },
-    [authOperations.logIn.rejected](state, action) {
-      state.error = action.payload;
-      alert(state.error);
+    [authOperations.logIn.rejected](state, { payload }) {
+      state.error = payload;
     },
   },
 });

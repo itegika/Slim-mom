@@ -13,11 +13,11 @@ export const token = {
 };
 
 export async function onSignUp(credentials) {
-  const { data } = await axios.post("/auth/register", credentials);
+  const { data } = await instance.post("/auth/register", credentials);
   return data;
 }
 export async function onLogIn(credentials) {
-  const { data } = await axios.post("/auth/login", credentials);
+  const { data } = await instance.post("/auth/login", credentials);
   return data;
 }
 

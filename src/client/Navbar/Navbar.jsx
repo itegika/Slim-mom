@@ -1,7 +1,8 @@
-import styles from "./Navbar.module.scss"
+// import { Link, NavLink } from "react-router-dom";
+import styles from "./Navbar.module.scss";
 
-const Navbar = ()=> {
-    return <div></div>
-}
+const Navbar = () => {
+  return <div></div>;
+};
 
 export default Navbar;

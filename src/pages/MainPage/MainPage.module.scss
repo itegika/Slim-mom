@@ -1,0 +1,12 @@
+@import "../../shared/styles/common.scss";
+
+.main {
+  background-color: peachpuff;
+  height: 200px;
+  @include tablet {
+    background-color: greenyellow;
+  }
+  @include desktop {
+    background-color: black;
+  }
+}

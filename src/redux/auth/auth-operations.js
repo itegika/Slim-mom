@@ -20,6 +20,7 @@ const logIn = createAsyncThunk(
     try {
       const data = await onLogIn(credentials);
       token.set(data.accessToken);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

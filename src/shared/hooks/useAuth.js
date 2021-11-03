@@ -4,13 +4,12 @@ import { fetchToken } from "../../redux/auth/auth-selectors";
 
 export const useAuth = () => {
   const token = useSelector(fetchToken);
-  useEffect(() => {
-    if (token) {
-      return true;
-    } else {
-      return false;
-    }
-  }, [token]);
+
+  if (token) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 export default useAuth;

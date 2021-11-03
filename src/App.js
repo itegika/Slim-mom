@@ -5,9 +5,9 @@ import "./shared/styles/common.scss";
 function App() {
   return (
     <div className="App">
-      <div>Welkom</div>
-      {/* <Navbar />
-      <Routes /> */}
+      <div>Wellkom</div>
+      <Navbar />
+      <Routes />
     </div>
   );
 }

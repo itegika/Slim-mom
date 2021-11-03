@@ -1,7 +1,7 @@
-import styles from "./CalculatorPage.module.scss"
+import styles from "./CalculatorPage.module.scss";
 
-const CalculatorPage = ()=> {
-    return <div></div>
-}
+const CalculatorPage = () => {
+  return <div>CalculatorPage</div>;
+};
 
-export default CalculatorPage
+export default CalculatorPage;

@@ -1,7 +1,7 @@
-import styles from "./MainPage.module.scss"
+import styles from "./MainPage.module.scss";
 
-const MainPage = ()=> {
-    return <div></div>
-}
+const MainPage = () => {
+  return <div>MainPage</div>;
+};
 
-export default MainPage
+export default MainPage;

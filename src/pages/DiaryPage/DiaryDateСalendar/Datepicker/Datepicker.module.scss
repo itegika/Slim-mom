@@ -1,0 +1,28 @@
+@media screen and (min-width: 320px) {
+  .DiaryDate {
+    margin-right: 20px;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #212121;
+  }
+  // .DatePickerSection {
+  //   display: flex;
+  //   justify-content: baseline;
+  //   align-items: center;
+  // }
+
+  // .DatePickerBtn {
+  // }
+}
+
+@media screen and (min-width: 768px) {
+  .DiaryDate {
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+}

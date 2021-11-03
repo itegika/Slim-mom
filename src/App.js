@@ -1,6 +1,7 @@
 import Navbar from "./client/Navbar";
 import Routes from "./navigation/Routes";
 import "./shared/styles/common.scss";
+import DiaryPage from "./pages/DiaryPage/Diarypage";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div>Welkom</div>
       {/* <Navbar />
       <Routes /> */}
+      {/* <DiaryPage /> */}
     </div>
   );
 }

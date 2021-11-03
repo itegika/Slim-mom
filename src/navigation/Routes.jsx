@@ -37,14 +37,15 @@ const Routes = () => {
       >
         <RegisterPage />
       </PublicRoute>
-      <PrivateRoute exact path="/diary" redirectTo="/">
+      <PrivateRoute exact path="/diary" redirectTo="/login">
         <DiaryPage />
       </PrivateRoute>
-      <PrivateRoute exact path="/calculator" redirectTo="/">
+      <PrivateRoute exact path="/calculator" redirectTo="/login">
         <CalculatorPage />
       </PrivateRoute>
     </Switch>
   </Suspense>;
 };
+
 
 export default Routes;

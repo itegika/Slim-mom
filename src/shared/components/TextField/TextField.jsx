@@ -21,6 +21,8 @@ const TextField = ({label, ...field})=>{
     )
 };
 
+
+
 TextField.defaultProps = {
     required:false,
     type: "text",
@@ -33,6 +35,7 @@ TextField.propTypes = {
     placeholder: PropTypes.string,
     required: PropTypes.bool,
     value: PropTypes.string,
+    name:PropTypes.string.isRequired,
 }
 
 

@@ -33,6 +33,7 @@ TextField.propTypes = {
     placeholder: PropTypes.string,
     required: PropTypes.bool,
     value: PropTypes.string,
+    name:PropTypes.string,
 }
 
 

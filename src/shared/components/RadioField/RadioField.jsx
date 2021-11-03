@@ -30,6 +30,6 @@ RadioField.propTypes = {
   onChange: PropTypes.func,
   required: PropTypes.bool,
   label: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };
 export default RadioField;

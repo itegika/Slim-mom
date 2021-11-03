@@ -1,9 +1,8 @@
 import styles from "./Modal.module.scss";
-import React from 'react';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-const createModal = document.querySelector('#modal');
+const modalWindow = document.querySelector('#modal');
 
 const Modal = ({ onClose, children }) => {
   useEffect(() => {
@@ -37,7 +36,7 @@ const Modal = ({ onClose, children }) => {
       <div className={styles.modalMainContainer}>
         <button
           className={styles.closeModalBtn}
-          onClick={handleCloseButtonClick}
+          onClick={onClose}
         />
         <div className={styles.mobileBackground}>
           <button

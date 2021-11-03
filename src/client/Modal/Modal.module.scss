@@ -25,11 +25,9 @@
     @include tablet {
       top: 0;
       width: 594px;
-      height: 580px;
     }
     @include desktop {
-      width: 690px;
-      height: 580px;
+      width: 690px;  
     }
   }
   
@@ -55,31 +53,28 @@
   
   .closeModalBtnMobile {
     background-image: url('./closeM.svg');
-    display: block;
+    background-color:transparent, getColor("bg-primary");
+    background-repeat: no-repeat;
     position: absolute;
     top: 18px;
     left: 24px;
-    background-color: getColor("bg-primary");
     width: 30px;
     height: 24px;
-    background-repeat: no-repeat;
     border: none;
-    background-color: transparent;
     cursor: pointer;
   }
   
   .closeModalBtn {
     background-image: url('./close.svg');
+    background-color:transparent, getColor("bg-primary");
+    background-repeat: no-repeat;
     display: none;
     position: absolute;
     top: 24px;
     right: 24px;
-    background-color: getColor("bg-primary");
     width: 12px;
     height: 12px;
-    background-repeat: no-repeat;
     border: none;
-    background-color: transparent;
     cursor: pointer;
     @include tablet {
       display: block;

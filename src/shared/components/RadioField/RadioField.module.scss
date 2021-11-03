@@ -1,18 +1,33 @@
 @import "../../styles/common.scss";
-.radioBox {
-  @include flex(center, center);
-  margin-left: 30px;
-  height: 20px;
-  padding-left: 26px;
+.radio {
+  &Box {
+    @include flex(center, center);
+    margin-left: 30px;
+    height: 20px;
+    padding-left: 26px;
+  }
+  &Label {
+    @include flex(flex-start, center);
+    font-family: Verdana;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: getColor("text-secondary");
+  }
+  &Button {
+    margin: 0;
+
+    &:checked + .radioLabel > .customRadio::before {
+      background-color: getColor("accent");
+    }
+    &:checked + .radioLabel {
+      font-weight: 700;
+
+      color: getColor("accent");
+    }
+  }
 }
-.radioLabel {
-  @include flex(flex-start, center);
-  font-family: Verdana;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0.04em;
-  color: getColor("text-secondary");
-}
+
 .customRadio {
   position: absolute;
   width: 20px;
@@ -28,18 +43,5 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-  }
-}
-
-.radioButton {
-  margin: 0;
-
-  &:checked + .radioLabel > .customRadio::before {
-    background-color: getColor("accent");
-  }
-  &:checked + .radioLabel {
-    font-weight: 700;
-
-    color: getColor("accent");
   }
 }

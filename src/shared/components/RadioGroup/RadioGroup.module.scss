@@ -1,14 +1,17 @@
 @import "../../styles/common.scss";
 
-.radioGroup {
-  @include flex(flex-start, flex-start);
-  flex-direction: column;
+.radio {
+  &Group {
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+  }
+  &Buttons {
+    @include flex(flex-start, center);
+    flex-direction: row;
+    margin-left: -30px;
+  }
 }
-.radioButtons {
-  @include flex(flex-start, center);
-  flex-direction: row;
-  margin-left: -30px;
-}
+
 .label {
   font-family: $font-primary;
   font-weight: 700;

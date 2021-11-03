@@ -6,19 +6,27 @@ const TextField = ({label, ...field})=>{
     const id = generate();
 
     return (
-        <div className="form-group">
-            {label && <label htmlFor={id}></label>}
-            <input className = {styles.formInput} 
+        <div className= {styles.formGroup}>
+            {label && <label htmlFor={id}>       
+                 <input className = {styles.formInput} 
                 {...field}
                 id={id}
                 />
+                </label>}
         </div>
     )
 };
 
+TextField.defaultProps = {
+    required:true,
+    field:[],
+}
+
 TextField.propTypes = {
     label: PropTypes.string,
-    field: PropTypes.object,
+    onChange: PropTypes.func,
+    type: PropTypes.number.isRequired,
+    placeholder: PropTypes.string,
 }
 
 

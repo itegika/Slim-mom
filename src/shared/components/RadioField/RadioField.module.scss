@@ -1,0 +1,80 @@
+.visuallyHidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.radioBox {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding-left: 26px;
+}
+.radioLabel {
+  display: flex;
+  align-items: center;
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}
+
+.radioButton {
+  margin: 0;
+}
+.customRadio {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-left: -26px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+}
+.customRadio::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+//Only checked
+.radioButton:checked + .radioLabel > .customRadio::before {
+  background-color: #fc842d;
+}
+.radioButton:checked + .radioLabel {
+  font-weight: 700;
+
+  color: #fc842d;
+}
+
+//Only focus
+.radioButton:focus + .radioLabel {
+  font-weight: 700;
+  color: #fc842d;
+}
+.radioButton:focus + .radioLabel > .customRadio {
+  border-color: #fc842d;
+}
+
+//Focus and checked
+.radioButton:focus:checked + .radioLabel {
+  font-weight: 700;
+  color: #fc842d;
+}
+.radioButton:focus:checked + .radioLabel > .customRadio {
+  border: 1px solid #e0e0e0;
+}
+.radioButton:focus:checked + .radioLabel > .customRadio::before {
+  background-color: #fc842d;
+}

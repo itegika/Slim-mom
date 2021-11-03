@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import axios from "axios";
 
 export const instance = axios.create({
@@ -16,12 +14,9 @@ export const token = {
 
 export async function onSignUp(credentials) {
   const { data } = await axios.post("/auth/register", credentials);
-  console.log(data);
   return data;
 }
 export async function onLogIn(credentials) {
   const { data } = await axios.post("/auth/login", credentials);
-  console.log(data);
   return data;
 }
->>>>>>> Stashed changes

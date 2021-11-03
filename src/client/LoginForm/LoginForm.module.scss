@@ -1,0 +1,51 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 83px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  font-family: "GothamPro-Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.92em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  color: #fc842d;
+}
+.btnBox {
+  display: flex;
+  margin: 60px auto 0;
+  flex-direction: column;
+  height: 108px;
+  justify-content: space-between;
+  align-items: center;
+}
+// .input {
+//   outline: none;
+// }
+@media screen and (min-width: 768px) {
+  .container {
+    margin-top: 156px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-left: 0px;
+  }
+  .btnBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+  }
+  .regBtn:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+}

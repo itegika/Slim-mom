@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 
 const useForm = (initialState, onSubmit) => {
   const [data, setData] = useState(initialState);

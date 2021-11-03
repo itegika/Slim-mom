@@ -17,6 +17,7 @@ const inputAttr = {
   password: {
     name: "password",
     placeholder: "Пароль",
+    type: "password",
     // pattern:
     //   "/([a-z]+[A-Z]+[0-9]+|[a-z]+[0-9]+[A-Z]+|[A-Z]+[a-z]+[0-9]+|[A-Z]+[0-9]+[a-z]+|[0-9]+[a-z]+[A-Z]+|[0-9]+[A-Z]+[a-z]+)/",
     title:

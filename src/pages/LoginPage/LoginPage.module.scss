@@ -1,0 +1,62 @@
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 14px;
+  line-height: 0.93;
+  letter-spacing: 0.04em;
+  position: relative;
+  width: 100vw;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 87px;
+
+    display: block;
+    z-index: 1;
+    width: inherit;
+
+    height: 100vh;
+    background-size: cover;
+    top: 0;
+    background: url(../../shared/images/mainPage/BananaRegLap.png),
+      url(../../shared/images/mainPage/DecoreReglap.png),
+      url(../../shared/images/mainPage/GreenRegDesc.png),
+      url(../../shared/images/mainPage/StrawberryRegPageLap.png);
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: right bottom, right bottom, right bottom 279px,
+      right bottom 232px;
+
+    width: 768px;
+    padding-left: 87px;
+    align-items: flex-start;
+    padding-top: 157px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+
+    position: absolute;
+    z-index: -100;
+    background: url(../../shared/images/mainPage/BananaRegDesc.png),
+      url(../../shared/images/mainPage/DecoreRegDesc.png),
+      url(../../shared/images/mainPage/GreenRegDesc.png),
+      url(../../shared/images/mainPage/StrawberryDesc.png);
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: right bottom, right 0px top 0px, right bottom 0px,
+      right 63px top 210px;
+    // background-position: 256px -46px, right 170px, 740px 341px, right top;
+
+    width: 1280px;
+    padding: 115px 137px 560px 111px;
+  }
+}

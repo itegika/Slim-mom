@@ -6,7 +6,6 @@ import TextField from "../../shared/components/TextField";
 import useForm from "../../shared/hooks/useForm";
 import Button from "../../shared/components/Button";
 import inputAttr from "../../shared/components/TextField/InputAttr";
-import PropTypes from "prop-types";
 // import styles from "./RegisterForm.module.scss"
 
 const initialState = {
@@ -63,14 +62,14 @@ const RegisterForm = () => {
           <Link to="/login">
             {/* // поменять путь когда создадим объект paths */}
             <Button
-              //   className={`${styles.button} ${selectedClassName} ${className}`}
+              // className={`${styles.button} ${selectedClassName} ${className}`}
               text="Вход"
               type="submit"
             />
           </Link>
           <Button
             //   className={`${styles.button} ${selectedClassName} ${className}`}
-            text="Регистрацмя"
+            text="Регистрация"
             type="submit"
           />
         </div>

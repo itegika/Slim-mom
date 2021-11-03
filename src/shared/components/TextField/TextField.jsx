@@ -1,9 +1,13 @@
 import {generate} from "shortid";
 import PropTypes from 'prop-types';
 import styles from "./TextField.module.scss";
+import { placeholder } from "@babel/types";
 
 const TextField = ({label, ...field})=>{
     const id = generate();
+    if (field.required) {
+        field.placeholder += " *"
+    }
 
     return (
         <div className= {styles.formGroup}>
@@ -12,21 +16,23 @@ const TextField = ({label, ...field})=>{
                 {...field}
                 id={id}
                 />
-                </label>}
+                </label>} 
         </div>
     )
 };
 
 TextField.defaultProps = {
-    required:true,
-    field:[],
+    required:false,
+    type: "text",
 }
 
 TextField.propTypes = {
     label: PropTypes.string,
-    onChange: PropTypes.func,
-    type: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired,
+    type: PropTypes.string,
     placeholder: PropTypes.string,
+    required: PropTypes.bool,
+    value: PropTypes.string,
 }
 
 

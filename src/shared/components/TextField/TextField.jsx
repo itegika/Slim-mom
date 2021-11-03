@@ -1,7 +1,7 @@
 import {generate} from "shortid";
 import PropTypes from 'prop-types';
 import styles from "./TextField.module.scss";
-import { placeholder } from "@babel/types";
+
 
 const TextField = ({label, ...field})=>{
     const id = generate();

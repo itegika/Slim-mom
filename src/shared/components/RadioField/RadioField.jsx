@@ -1,10 +1,10 @@
-import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
 
+import useUniqueString from "../../hooks/useUniqueString";
 import styles from "./RadioField.module.scss";
 
-const RadioField = ({ onChange, required, label, name }) => {
-  const id = nanoid();
+const RadioField = ({ onChange, label, name, checked }) => {
+  const id = useUniqueString();
   return (
     <div className={styles.radioBox}>
       <input
@@ -12,7 +12,7 @@ const RadioField = ({ onChange, required, label, name }) => {
         id={id}
         type="radio"
         onChange={onChange}
-        required={required}
+        checked={checked && checked}
         className={`${styles.radioButton} ${styles.visuallyHidden}`}
       />
       <label htmlFor={id} className={styles.radioLabel}>
@@ -24,11 +24,9 @@ const RadioField = ({ onChange, required, label, name }) => {
 };
 RadioField.defaultProps = {
   onChange: () => {},
-  required: false,
 };
 RadioField.propTypes = {
   onChange: PropTypes.func,
-  required: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
 };

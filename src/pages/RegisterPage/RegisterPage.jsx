@@ -1,7 +1,12 @@
-import styles from "./RegisterPage.module.scss";
+import RegisterForm from "../../client/RegisterForm";
+import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage";
 
 const RegisterPage = () => {
-  return <div>RegisterPage</div>;
+  return (
+    <AuthorizedPageContainer>
+      <RegisterForm />
+    </AuthorizedPageContainer>
+  );
 };
 
 export default RegisterPage;

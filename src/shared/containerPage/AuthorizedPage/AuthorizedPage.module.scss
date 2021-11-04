@@ -1,0 +1,25 @@
+@import "../../../shared/styles/common.scss";
+.main {
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.mainDiv {
+  background-color: #ffffff;
+}
+.sideBarDiv {
+  background-color: getColor("bg-secondary");
+  @include tablet {
+    background-position: 128% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../images/sidebar/RightSideBarImgTablet.png");
+  }
+  @include desktop {
+    background-position: 100% 40%;
+    background-repeat: no-repeat;
+    background-image: url("../../images/sidebar/RightSideBarImgDesktop.png");
+  }
+}

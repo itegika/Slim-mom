@@ -8,10 +8,9 @@ import Button from "../../../shared/components/Button";
 import { getProducts } from "../../../shared/services/products";
 
 const DiaryAddProductForm = () => {
-  useEffect(() => {
-    const data = getProducts();
-    console.log(data);
-  }, []);
+  // useEffect(() => {
+  //   const data = getProducts();
+  // }, []);
 
   const options = [
     { kcal: "230", label: "баклажан" },

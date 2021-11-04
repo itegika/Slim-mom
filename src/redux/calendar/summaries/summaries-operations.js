@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import Notiflix from "notiflix";
 
 // const getInfo = createAsyncThunk(
-//   "auth/login",
+//   "isLogin",
 //   async (credentials, { rejectWithValue }) => {
 //     try {
 //       const { data } = await axios.post("/users/login", credentials);

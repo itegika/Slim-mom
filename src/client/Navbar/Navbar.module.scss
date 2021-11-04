@@ -10,10 +10,6 @@
 }
 
 .nav {
-  @include desktop {
-    align-items: baseline;
-  }
-
   @include tablet {
     border-bottom: 2px solid getColor("border-color");
   }
@@ -21,6 +17,7 @@
   @include desktop {
     border-bottom: none;
     padding: 80px 90px;
+    position: absolute;
   }
 }
 

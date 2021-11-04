@@ -1,12 +1,110 @@
 @import "../../shared/styles/common.scss";
-
-.main {
-  background-color: peachpuff;
-  height: 200px;
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: getColor("text-primary");
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 30;
   @include tablet {
-    background-color: greenyellow;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0;
+    margin-bottom: 60px;
+
+    max-width: 600px;
   }
   @include desktop {
-    background-color: black;
+    font-size: 34px;
+    line-height: 41px;
+  }
+}
+
+.main {
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 423px;
+    max-width: 800px;
+
+    background-image: url("../../shared/images/mainPage/StrawberryLaptop.png"),
+      url("../../shared/images/mainPage/BananaLaptop.png"),
+      url("../../shared/images/mainPage/GreenLaptop.png"),
+      url("../../shared/images/mainPage/DecoreLaptop.png");
+    background-size: 308px, 491px, 531px, 553px;
+    background-repeat: no-repeat;
+    background-position: right 36px bottom 168px, bottom 0 right 0,
+      bottom 0 left 0, bottom 0 right 0;
+  }
+  @include desktop {
+    padding-top: 292px;
+    padding-bottom: 111px;
+    max-width: 1280px;
+    background-image: url("../../shared/images/mainPage/StrawberryDesc.png"),
+      url("../../shared/images/mainPage/BananaDesc.png"),
+      url("../../shared/images/mainPage/GreenDesc.png"),
+      url("../../shared/images/mainPage/DecoreDesc.png");
+    background-size: 362px, 500px, 746px, 602px;
+    background-repeat: no-repeat;
+    background-position: right 36px bottom 65px, top 0 right 0,
+      right 195px bottom 30px, bottom 0 right 0;
+  }
+}
+.form {
+  @include flex(center);
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 320px;
+  @include tablet {
+    margin: 0;
+  }
+  @include desktop {
+    max-width: 510px;
+  }
+}
+.fields {
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+
+  @include desktop {
+    margin-bottom: -40px;
+    max-height: 240px;
+  }
+  @include tablet {
+    margin-bottom: -40px;
+    max-height: 240px;
+  }
+  @include desktop {
+    max-height: 240px;
+  }
+}
+.field {
+  margin-bottom: 30px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+  @include desktop {
+    max-width: 240px;
+  }
+}
+.field:nth-child(-n + 3) {
+  @include tablet {
+    margin-right: 50px;
+  }
+}
+.button {
+  margin-top: 40px;
+  align-self: center;
+  @include tablet {
+    margin-top: 60px;
+    align-self: flex-start;
+  }
+  @include desktop {
+    align-self: flex-end;
   }
 }

@@ -24,3 +24,8 @@ export async function onLogIn(credentials) {
   const { data } = await instance.post("/auth/login", credentials);
   return data;
 }
+
+export async function onLogOut() {
+  const { data } = await instance.post("auth/logout");
+  return data;
+}

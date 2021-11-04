@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>Wellkom</div>
+      <div></div>
       <Navbar />
       <Routes />
     </div>

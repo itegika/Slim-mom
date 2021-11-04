@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState,useSelector } from "react";
 import styles from "./CalculatorPage.module.scss";
 import Button from "../../shared/components/Button";
 import TextField from "../../shared/components/TextField";
 import RadioGroup from "../../shared/components/RadioGroup";
-import { getDailyRate } from "../../shared/services/daily";
+import {getDailyRateById } from "../../shared/services/daily";
 import useForm from "../../shared/hooks/useForm";
 import { initialState } from "./initialState";
 import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage/AuthorizedPage";
+import { getUserId } from "../../redux/calendar/summaries/summaries-selectors";
 
 const CalculatorPage = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, () => {
     return;
   });
+
+  // const idUser = useSelector(getUserId)
+  // console.log(idUser);
 
   const [products, setProducts] = useState([]);
   const [calories, setCalories] = useState(null);
@@ -54,14 +58,13 @@ const CalculatorPage = () => {
     const ccc = await Object.fromEntries(bbb);
 
     try {
-      const { data } = await getDailyRate(ccc);
+      // const { data } = await getDailyRateById(ccc,id);
       const { dailyRate, notAllowedProducts } = await data;
       setCalories(dailyRate);
       setProducts(notAllowedProducts.slice(0, 4));
     } catch (error) {
       throw error;
     }
-
     e.target.reset();
     handleSubmit(e);
   };

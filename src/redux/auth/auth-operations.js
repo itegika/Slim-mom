@@ -58,7 +58,7 @@ const logOut = createAsyncThunk(
 
 const CheckedIsLoginCurrentUser = createAsyncThunk(
   "auth/checked",
-  async (_, thunkAPI,{ rejectWithValue }) => {
+  async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
     if (persistedToken === null) {
@@ -69,7 +69,7 @@ const CheckedIsLoginCurrentUser = createAsyncThunk(
       const data = await CheckedCurrentUser();
       return data;
     } catch (err) {
-      return rejectWithValue(err);
+      return  thunkAPI.rejectWithValue(err);
     }
   }
 );

@@ -1,41 +1,11 @@
-.header {
-  padding: 18px 15px;
+@import "src/shared/styles/common";
 
-  border-bottom: 2px solid getColor("border-color");
-
-  @include tablet {
-    border-bottom: 2px solid getColor("border-color");
-  }
-
-  @include desktop {
-    border-bottom: none;
-    padding: 80px 90px;
-  }
-}
-
-.logo {
-  margin-right: auto;
-
-  @include tablet {
-    margin-right: auto;
-  }
-  @include desktop {
-    margin: 0;
-    padding-right: 20px;
-  }
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-
-  @include desktop {
-    align-items: baseline;
-  }
-}
+// .row {
+//   display: flex;
+//   align-items: center;
+// }
 
 .navlink {
-  font-family: $font-secondary;
   font-weight: 700;
   font-size: 14px;
   text-align: right;
@@ -44,9 +14,11 @@
   text-decoration: none;
 
   color: getColor("text-secondary");
+
+  cursor: pointer;
 }
 
-.navigation {
+.userMenu {
   @include desktop {
     border-left: 2px solid getColor("border-color");
     padding-left: 20px;
@@ -67,7 +39,6 @@
 
 .navlinkActive {
   @extend .navlink;
-  font-family: $font-secondary;
   font-weight: 700;
   font-size: 14px;
   text-align: right;

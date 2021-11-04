@@ -28,8 +28,8 @@
   padding-bottom: 80px;
   @include tablet {
     // padding-top: 100px;
-    padding-bottom: 423px;
-    max-width: 800px;
+    padding-bottom: 530px;
+    // max-width: 800px;
 
     background-image: url("../../shared/images/mainPage/StrawberryLaptop.png"),
       url("../../shared/images/mainPage/BananaLaptop.png"),
@@ -42,8 +42,8 @@
   }
   @include desktop {
     // padding-top: 292px;
-    padding-bottom: 111px;
-    max-width: 1280px;
+    padding-bottom: 93px;
+    // max-width: 1280px;
     background-image: url("../../shared/images/mainPage/StrawberryDesc.png"),
       url("../../shared/images/mainPage/BananaDesc.png"),
       url("../../shared/images/mainPage/GreenDesc.png"),

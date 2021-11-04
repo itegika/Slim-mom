@@ -21,16 +21,13 @@ const RegisterForm = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.main} container`}>
+      {/* <div className={styles.container}> */}
       <h1 className={styles.title}>Регистрация</h1>
 
-      <form
-        onSubmit={handleSubmit}
-        //   className={styles.form}
-        autoComplete="off"
-      >
+      <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
         <TextField
-          //   className={styles.input}
+          // className={styles.input}
           {...inputAttr.name}
           onChange={handleChange}
           value={data.username}
@@ -54,15 +51,15 @@ const RegisterForm = () => {
           value={data.password}
         />
         <div>
-          <Link to="/login">
-            {/* // поменять путь когда создадим объект paths */}
-            <Button
+          {/* <Link to="/login"> */}
+          {/* // поменять путь когда создадим объект paths */}
+          {/* <Button
               className={`${styles.button} ${styles.buttonSecondary} ${styles.regBtn}`}
               text="Вход"
               type="submit"
               variant="secondary"
-            />
-          </Link>
+            /> */}
+          {/* </Link> */}
           <Button
             className={`${styles.button} ${styles.buttonPrimary} ${styles.regBtn}`}
             text="Регистрация"
@@ -71,6 +68,7 @@ const RegisterForm = () => {
           />
         </div>
       </form>
+      {/* </div> */}
     </div>
   );
 };

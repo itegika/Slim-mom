@@ -11,6 +11,7 @@ export const useAuth = () => {
       return false;
     }
   }, [token]);
+  return Boolean(token);
 };
 
 export default useAuth;

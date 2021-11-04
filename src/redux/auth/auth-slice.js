@@ -28,6 +28,13 @@ const authSlice = createSlice({
     [authOperations.logIn.rejected](state, { payload }) {
       state.error = payload;
     },
+    [authOperations.logOut.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
+    },
+    [authOperations.logOut.rejected](state, { payload }) {
+      state.error = payload;
+    },
   },
 });
 

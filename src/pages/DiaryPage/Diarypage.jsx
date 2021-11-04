@@ -13,21 +13,21 @@ const DiaryPage = () => {
     setIsOpen(true);
   };
 
+  // {isOpen ? () : ()}
+
   return (
     <div className={styles.DiaryConteiner}>
-      {isOpen ? (
-        <DiaryAddProductForm className={styles.DiaryForm} />
-      ) : (
-        <>
-          <div className={styles.DiaryCalendar}>
-            <DiaryDateСalendar />
-          </div>
-          <DiaryProductsList className={styles.DiaryList} />
-          <button onClick={handleOpenModal} className={styles.OpenFormButton}>
-            +
-          </button>
-        </>
-      )}
+      <div className={styles.DiaryCalendar}>
+        <DiaryDateСalendar />
+      </div>
+
+      <DiaryAddProductForm
+        className={`${styles.DiaryForm} ${styles.visuallyHidden}`}
+      />
+      <DiaryProductsList className={styles.DiaryList} />
+      <button onClick={handleOpenModal} className={styles.OpenFormButton}>
+        +
+      </button>
     </div>
   );
 };

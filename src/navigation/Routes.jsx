@@ -47,5 +47,4 @@ const Routes = () => {
   </Suspense>;
 };
 
-
 export default Routes;

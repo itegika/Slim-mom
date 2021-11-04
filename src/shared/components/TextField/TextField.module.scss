@@ -1,21 +1,21 @@
-  .formInput {
-    font-family: $font-primary;
+.formInput {
+  // font-family: $font-primary;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: getColor("text-secondary");
+  margin: 0;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid getColor("bg-secondary");
+
+  &::placeholder {
+    // font-family: $font-primary;
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.04em;
     color: getColor("text-secondary");
-    margin: 0;
-    padding: 10px;
-    border: none;
-    border-bottom: 1px solid getColor("bg-secondary");
-
-    &::placeholder {
-      font-family: $font-primary;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      letter-spacing: 0.04em;
-      color: getColor("text-secondary");
-    }
   }
+}

@@ -1,0 +1,51 @@
+.rationWrapper {
+  //   position: absolute;
+  //   bottom: 0;
+  width: 100%;
+  padding-bottom: 50px;
+  //   height: 245px;
+  background-color: #f0f1f3;
+  @media screen and (min-width: 768px) {
+    background-image: url(../../images/RightSideBarImgTablet.png);
+    // background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+  @media screen and (min-width: 1280px) {
+    background-image: none;
+  }
+}
+
+.rationTitle {
+  margin: auto;
+  padding-top: 50px;
+  padding-left: 15px;
+  //   margin-bottom: 20px;
+  text-align: start;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+  @media screen and(min-width: 768px) {
+    padding-top: 95px;
+    padding-bottom: 45px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 50px;
+    padding-bottom: 48px;
+  }
+}
+
+.ration {
+  font-family: Verdana;
+  color: #9b9faa;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+  &:not(:last-child) {
+    margin-bottom: 23px;
+  }
+}

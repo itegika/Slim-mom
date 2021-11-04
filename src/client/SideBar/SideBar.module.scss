@@ -1,0 +1,17 @@
+.SideBar {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    width: 535px;
+    position: absolute;
+    right: 0;
+    background-image: url(../images/RightSideBarImgDesktop.png);
+    background-position: right;
+  }
+}

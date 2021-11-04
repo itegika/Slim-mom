@@ -1,4 +1,3 @@
-// import { Link, NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../shared/hooks/useAuth";
 
@@ -15,12 +14,8 @@ import logoDesktop2x from "../../shared/images/logo/logo-desktop-2x.png";
 
 import styles from "./Navbar.module.scss";
 
-import BurgerMenu from "./UserMenu/BurgerMenu/BurgerMenu";
-import useMedia from "../../shared/hooks/useMedia";
-
 const Navbar = () => {
   const isLoggedIn = useAuth();
-  const { DESK } = useMedia();
 
   return (
     <nav className={styles.nav}>

@@ -20,32 +20,13 @@ function App() {
   // const info = useSelector(getSummariesInfo);
   // const notAllowedProducts = useSelector(getnotAllowedProducts);
 
-  // useEffect(() => {
-  //   dispatch(
-  //     authOperations.logIn({
-  //       email: "temnaya@example.com",
-  //       password: "qwerty12345",
-  //     })
-  //   );
-
-  //   setTimeout(() => {
-  //     dispatch(
-  //       addItem({
-  //         date: "2020-12-31",
-  //         productId: "5d51694802b2373622ff552c",
-  //         weight: 100,
-  //       })
-  //     );
-  //   }, 5000);
-  // }, [dispatch]);
-
   return (
     <div className="App">
       <div></div>
       <Navbar />
       <Routes />
       {/* <CalculatorPage /> */}
-      <DiaryPage />
+      {/* <DiaryPage /> */}
     </div>
   );
 }

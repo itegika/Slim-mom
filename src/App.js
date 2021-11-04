@@ -13,6 +13,7 @@ import { getDailyRateById } from "./shared/services/daily";
 
 // import { postDay } from "./shared/services/day";
 // import { getDailyRateById } from "./shared/services/daily";
+import "./shared/styles/common.scss";
 
 function App() {
   const dispatch = useDispatch();

@@ -1,7 +1,12 @@
-import styles from "./LoginPage.module.scss";
+import LoginForm from "../../client/LoginForm";
+import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage";
 
 const LoginPage = () => {
-  return <div>LoginPage</div>;
+  return (
+    <AuthorizedPageContainer>
+      <LoginForm />
+    </AuthorizedPageContainer>
+  );
 };
 
 export default LoginPage;

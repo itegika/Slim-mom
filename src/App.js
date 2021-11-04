@@ -11,6 +11,8 @@ import { useEffect } from "react";
 import { addItem } from "./redux/calendar/productItems/productItems-operations";
 // import { postDay } from "./shared/services/day";
 // import { getDailyRateById } from "./shared/services/daily";
+import DiaryPage from "./pages/DiaryPage";
+import CalculatorPage from "./pages/CalculatorPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +44,8 @@ function App() {
       <div></div>
       <Navbar />
       <Routes />
+      {/* <CalculatorPage /> */}
+      <DiaryPage />
     </div>
   );
 }

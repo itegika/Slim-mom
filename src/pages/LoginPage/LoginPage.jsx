@@ -1,11 +1,11 @@
 import LoginForm from "../../client/LoginForm";
-import styles from "./LoginPage.module.scss";
+import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage";
 
 const LoginPage = () => {
   return (
-    <div className={styles.container}>
+    <AuthorizedPageContainer>
       <LoginForm />
-    </div>
+    </AuthorizedPageContainer>
   );
 };
 

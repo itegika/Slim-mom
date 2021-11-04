@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import authOperations from "../../redux/auth/auth-operations";
 import { Link } from "react-router-dom";
@@ -6,7 +5,7 @@ import TextField from "../../shared/components/TextField";
 import useForm from "../../shared/hooks/useForm";
 import Button from "../../shared/components/Button";
 import inputAttr from "../../shared/components/TextField/InputAttr";
-// import styles from "./RegisterForm.module.scss"
+import styles from "./RegisterForm.module.scss";
 
 const initialState = {
   username: "",
@@ -22,12 +21,8 @@ const RegisterForm = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
 
   return (
-    <div>
-      <h1
-      //   className={styles.title}
-      >
-        Регистрация
-      </h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Регистрация</h1>
 
       <form
         onSubmit={handleSubmit}
@@ -62,15 +57,17 @@ const RegisterForm = () => {
           <Link to="/login">
             {/* // поменять путь когда создадим объект paths */}
             <Button
-              // className={`${styles.button} ${selectedClassName} ${className}`}
+              className={`${styles.button} ${styles.buttonSecondary} ${styles.regBtn}`}
               text="Вход"
               type="submit"
+              variant="secondary"
             />
           </Link>
           <Button
-            //   className={`${styles.button} ${selectedClassName} ${className}`}
+            className={`${styles.button} ${styles.buttonPrimary} ${styles.regBtn}`}
             text="Регистрация"
             type="submit"
+            variant="primary"
           />
         </div>
       </form>

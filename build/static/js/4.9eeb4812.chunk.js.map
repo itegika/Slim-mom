@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/MainPage/MainPage.jsx"],"names":["MainPage"],"mappings":"kIAAA,yBAMeA,UAJE,WACf,OAAO","file":"static/js/4.9eeb4812.chunk.js","sourcesContent":["import styles from \"./MainPage.module.scss\";\n\nconst MainPage = () => {\n  return <div></div>;\n};\n\nexport default MainPage;\n"],"sourceRoot":""}

@@ -1,4 +1,4 @@
-import SideBarRation from "./sideBarRation/SideBarRation";
+import SideBarRation from "./SideBarRation/SideBarRation";
 import SideBarSummary from "./sideBarSummary/SideBarSummary";
 
 import styles from "./SideBar.module.scss";

@@ -15,21 +15,21 @@ const Logo = ({
         <source
           className="image"
           src={logoDesktop}
-          srcset={logoDesktop + " 1x," + logoDesktop2x + " 2x"}
+          srcSet={logoDesktop + " 1x," + logoDesktop2x + " 2x"}
           media="(min-width:1280px)"
         />
         {/* // <!-- TABLET --> */}
         <source
           className="image"
           src={logoTablet}
-          srcset={logoTablet + " 1x," + logoTablet2x + " 2x"}
+          srcSet={logoTablet + " 1x," + logoTablet2x + " 2x"}
           media="(min-width:768px)"
         />
         {/* // <!-- MOBILE --> */}
         <source
           className="image"
           src={logoMobile}
-          srcset={logoMobile + " 1x," + logoMobile2x + " 2x"}
+          srcSet={logoMobile + " 1x," + logoMobile2x + " 2x"}
           media="(max-width:767px)"
         />
         <img className="default" src={logoMobile} alt="Логотип" />

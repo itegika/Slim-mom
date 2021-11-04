@@ -35,6 +35,9 @@ export const authSlice = createSlice({
     [authOperations.logOut.rejected](state, { payload }) {
       state.error = payload;
     },
+    [authOperations.CheckedIsLoginCurrentUser.fulfilled](state, { payload }) {
+      state.user = payload;
+    },
   },
 });
 

@@ -1,5 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { token, onSignUp, onLogIn, onLogOut } from "../../shared/services/auth";
+import {
+  token,
+  onSignUp,
+  onLogIn,
+  onLogOut,
+  instance,
+  CheckedCurrentUser,
+} from "../../shared/services/auth";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 const errorNotify = {
@@ -47,9 +54,28 @@ const logOut = createAsyncThunk("auth/logout", async ({ rejectWithValue }) => {
   }
 });
 
+const CheckedIsLoginCurrentUser = createAsyncThunk(
+  "auth/checked",
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+    token.set(persistedToken);
+    try {
+      const data = await CheckedCurrentUser(persistedToken);
+      return data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
 const authOperations = {
   register,
   logIn,
   logOut,
+  CheckedIsLoginCurrentUser,
 };
 export default authOperations;

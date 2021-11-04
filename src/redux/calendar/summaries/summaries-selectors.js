@@ -3,3 +3,6 @@ export const getSummariesInfo = (state) =>
 export const getnotAllowedProducts = (state) =>
   state.calendar?.summaries?.user?.userData?.notAllowedProducts;
 export const getUserId = (state) => state.calendar.summaries.user.id;
+
+export const getCurrentUserInfootAllowedProducts = (state) =>
+  state.calendar?.summaries?.userData?.notAllowedProducts;

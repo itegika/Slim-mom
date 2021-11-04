@@ -10,8 +10,9 @@ const Button = ({ className, text, onClick, variant, type }) => {
     <button
       type={type}
       onClick={onClick}
-      className={`${styles.button} ${selectedClassName} ${className}`}>
-      {text}hello
+      className={`${styles.button} ${selectedClassName} ${className}`}
+    >
+      {text}
     </button>
   );
 };

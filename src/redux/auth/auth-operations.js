@@ -1,6 +1,22 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { token, onSignUp, onLogIn, onLogOut } from "../../shared/services/auth";
+import {
+  token,
+  onSignUp,
+  onLogIn,
+  onLogOut,
+  instance,
+  CheckedCurrentUser,
+} from "../../shared/services/auth";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
+const errorNotify = {
+  403: "This email doesn't exist or password is wrong",
+  409: "Provided email already exists, try another",
+  showAlert(code) {
+    const message = this[String(code)];
+    alert(message);
+  },
+};
 const register = createAsyncThunk(
   "auth/register",
   async (credentials, { rejectWithValue }) => {
@@ -9,6 +25,7 @@ const register = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
+      Notify.failure(errorNotify.showAlert(error.response.status));
       return rejectWithValue(error.message);
     }
   }
@@ -22,7 +39,8 @@ const logIn = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      Notify.failure(errorNotify.showAlert(error.response.status));
+      return rejectWithValue(error);
     }
   }
 );
@@ -36,9 +54,28 @@ const logOut = createAsyncThunk("auth/logout", async ({ rejectWithValue }) => {
   }
 });
 
+const CheckedIsLoginCurrentUser = createAsyncThunk(
+  "auth/checked",
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+    token.set(persistedToken);
+    try {
+      const data = await CheckedCurrentUser(persistedToken);
+      return data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
 const authOperations = {
   register,
   logIn,
   logOut,
+  CheckedIsLoginCurrentUser,
 };
 export default authOperations;

@@ -29,11 +29,14 @@ export const authSlice = createSlice({
       state.error = payload;
     },
     [authOperations.logOut.fulfilled](state, { payload }) {
-      state.user = payload.user;
-      state.token = payload.token;
+      state.user = "";
+      state.token = "";
     },
     [authOperations.logOut.rejected](state, { payload }) {
       state.error = payload;
+    },
+    [authOperations.CheckedIsLoginCurrentUser.fulfilled](state, { payload }) {
+      state.user = payload;
     },
   },
 });

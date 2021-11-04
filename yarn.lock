@@ -1668,8 +1668,11 @@
     "pretty-format" "^26.6.2"
 
 "@testing-library/dom@>=7.21.4":
+<<<<<<< HEAD
+=======
   "integrity" "sha512-rab7vpf1uGig5efWwsCOn9j4/doy+W3VBoUyzX7C4y77u0wAckwc7R8nyH6e2rw0rRzKJR+gWPiAg8zhiFbxWQ=="
   "resolved" "https://registry.npmjs.org/@testing-library/dom/-/dom-8.10.1.tgz"
+>>>>>>> 115d5505b6d23fea1aa73401513d652222152066
   "version" "8.10.1"
   dependencies:
     "@babel/code-frame" "^7.10.4"
@@ -2438,8 +2441,11 @@
     "@babel/runtime-corejs3" "^7.10.2"
 
 "aria-query@^5.0.0":
+<<<<<<< HEAD
+=======
   "integrity" "sha512-V+SM7AbUwJ+EBnB8+DXs0hPZHO0W6pqBcc0dW90OwtVG02PswOu/teuARoLQjdDOH+t9pJgGnW5/Qmouf3gPJg=="
   "resolved" "https://registry.npmjs.org/aria-query/-/aria-query-5.0.0.tgz"
+>>>>>>> 115d5505b6d23fea1aa73401513d652222152066
   "version" "5.0.0"
 
 "arity-n@^1.0.4":
@@ -5135,11 +5141,14 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^3.0.0"
 
+<<<<<<< HEAD
+=======
 "file-uri-to-path@1.0.0":
   "integrity" "sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw=="
   "resolved" "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz"
   "version" "1.0.0"
 
+>>>>>>> 115d5505b6d23fea1aa73401513d652222152066
 "filesize@6.1.0":
   "integrity" "sha512-LpCHtPQ3sFx67z+uh2HnSyWSLLu5Jxo21795uRDuar/EOuYWXib5EmPaGIBuSnRqH2IODiKA2k5re/K9OnN/Yg=="
   "resolved" "https://registry.npmjs.org/filesize/-/filesize-6.1.0.tgz"
@@ -9369,12 +9378,16 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
+<<<<<<< HEAD
+"react-is@^17.0.1", "react-is@^17.0.2":
+=======
 "react-is@^17.0.1":
   "integrity" "sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
   "version" "17.0.1"
 
 "react-is@^17.0.2":
+>>>>>>> 115d5505b6d23fea1aa73401513d652222152066
   "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
@@ -11350,8 +11363,11 @@
   "version" "0.0.6"
 
 "typescript@^3.2.1 || ^4", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
+<<<<<<< HEAD
+=======
   "integrity" "sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.4.4.tgz"
+>>>>>>> 115d5505b6d23fea1aa73401513d652222152066
   "version" "4.4.4"
 
 "unicode-canonical-property-names-ecmascript@^1.0.4":

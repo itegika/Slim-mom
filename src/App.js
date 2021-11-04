@@ -12,7 +12,7 @@ function App() {
   
   useEffect(() => {
     dispatch(authOperations.CheckedIsLoginCurrentUser());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="App">

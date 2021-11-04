@@ -1,4 +1,4 @@
-import { useState,useSelector } from "react";
+import { useState } from "react";
 import styles from "./CalculatorPage.module.scss";
 import Button from "../../shared/components/Button";
 import TextField from "../../shared/components/TextField";
@@ -8,14 +8,15 @@ import useForm from "../../shared/hooks/useForm";
 import { initialState } from "./initialState";
 import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage/AuthorizedPage";
 import { getUserId } from "../../redux/calendar/summaries/summaries-selectors";
+import { useSelector } from "react-redux";
 
 const CalculatorPage = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, () => {
     return;
   });
 
-  // const idUser = useSelector(getUserId)
-  // console.log(idUser);
+  const idUser = useSelector(getUserId)
+
 
   const [products, setProducts] = useState([]);
   const [calories, setCalories] = useState(null);
@@ -58,7 +59,7 @@ const CalculatorPage = () => {
     const ccc = await Object.fromEntries(bbb);
 
     try {
-      // const { data } = await getDailyRateById(ccc,id);
+      const { data } = await getDailyRateById(ccc,idUser);
       const { dailyRate, notAllowedProducts } = await data;
       setCalories(dailyRate);
       setProducts(notAllowedProducts.slice(0, 4));

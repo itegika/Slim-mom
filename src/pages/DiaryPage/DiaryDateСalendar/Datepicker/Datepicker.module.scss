@@ -9,14 +9,19 @@
     color: #212121;
   }
 
-  .DatePickerSection {
-    // display: none;
-    //   justify-content: baseline;
-    //   align-items: center;
-  }
-
-  // .DatePickerBtn {
+  // .DatePickerSection {
+  // display: none;
+  //   justify-content: baseline;
+  //   align-items: center;
   // }
+
+  .DatePickerBtn {
+    background-image: url("../../../../shared/images/svg/Datepicker.svg");
+    background-repeat: no-repeat;
+    border: none;
+    width: 18px;
+    height: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {

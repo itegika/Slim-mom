@@ -30,9 +30,7 @@ const Datepicker = () => {
     <div className={styles.DatePickerSection}>
       <span className={styles.DiaryDate}>{formatDate(startDate)}</span>
 
-      <button onClick={handleClick} className={styles.DatePickerBtn}>
-        {"img"}
-      </button>
+      <button onClick={handleClick} className={styles.DatePickerBtn}></button>
       {isOpen && (
         <DatePicker selected={startDate} onChange={handleChange} inline />
       )}

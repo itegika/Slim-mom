@@ -4,40 +4,37 @@ import styles from "./MainPage.module.scss";
 import Button from "../../shared/components/Button";
 import TextField from "../../shared/components/TextField";
 import RadioGroup from "../../shared/components/RadioGroup";
+import useForm from "../../shared/hooks/useForm";
+import { initialState } from "./initialState";
 const MainPage = () => {
-  const [bloodType, setBloodType] = useState(1);
-  const [height, setHeight] = useState("");
-  const [currentWeight, setCurrentWeight] = useState("");
-  const [desiredWeight, setDesiredWeight] = useState("");
-  const [age, setAge] = useState("");
+  const [data, handleChange, handleSubmit] = useForm(initialState, (data) =>
+    console.log(data)
+  );
+  // const [bloodType, setBloodType] = useState(1);
+  // const [height, setHeight] = useState("");
+  // const [currentWeight, setCurrentWeight] = useState("");
+  // const [desiredWeight, setDesiredWeight] = useState("");
+  // const [age, setAge] = useState("");
   const name = "bloodType";
   const itemsOptions = [
     {
-      onChange: () => {
-        setBloodType(1);
-      },
+      onChange: handleChange,
       name,
       label: "1",
       checked: bloodType === 1 ? true : false,
     },
     {
-      onChange: () => {
-        setBloodType(2);
-      },
+      onChange: handleChange,
       name,
       label: "2",
     },
     {
-      onChange: () => {
-        setBloodType(3);
-      },
+      onChange: handleChange,
       name,
       label: "3",
     },
     {
-      onChange: () => {
-        setBloodType(4);
-      },
+      onChange: handleChange,
       name,
       label: "4",
     },
@@ -55,36 +52,25 @@ const MainPage = () => {
                 required={true}
                 label=""
                 name="height"
-                value={height}
-                onChange={(e) => {
-                  setHeight(e.target.value);
-                }}
+                onChange={handleChange}
                 placeholder="Рост"
               />
             </div>
             <div className={styles.field}>
-              {" "}
               <TextField
                 required={true}
                 label=""
                 name="age"
-                value={age}
-                onChange={(e) => {
-                  setAge(e.target.value);
-                }}
+                onChange={handleChange}
                 placeholder="Возраст"
               />
             </div>
             <div className={styles.field}>
-              {" "}
               <TextField
                 required={true}
                 label=""
-                name="currentWeight"
-                value={currentWeight}
-                onChange={(e) => {
-                  setCurrentWeight(e.target.value);
-                }}
+                name="weight"
+                onChange={handleChange}
                 placeholder="Текущий вес"
               />
             </div>
@@ -93,10 +79,7 @@ const MainPage = () => {
                 required={true}
                 label=""
                 name="desiredWeight"
-                value={desiredWeight}
-                onChange={(e) => {
-                  setDesiredWeight(e.target.value);
-                }}
+                onChange={handleChange}
                 placeholder="Желаемый вес"
               />
             </div>
@@ -106,15 +89,9 @@ const MainPage = () => {
           <Button
             text="Похудеть"
             className={styles.button}
-            onClick={() => {
-              // e.preventDefault();
-              console.log({
-                bloodType,
-                age,
-                height,
-                currentWeight,
-                desiredWeight,
-              });
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmit(e);
             }}
             type="submit"
           />

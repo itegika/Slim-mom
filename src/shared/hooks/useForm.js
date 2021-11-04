@@ -6,6 +6,7 @@ const useForm = (initialState, onSubmit) => {
   const handleChange = ({ target }) => {
     const { type, name, value, checked } = target;
     const newValue = type === "radio" ? checked : value;
+    console.log(newValue);
     setData((prevState) => ({ ...prevState, [name]: newValue }));
   };
 

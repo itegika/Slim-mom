@@ -32,6 +32,7 @@ const Navbar = () => {
           </div>
           <UserMenu isLoggedIn={isLoggedIn} />
           {isLoggedIn && <UserInfo />}
+          {/* <UserInfo /> */}
         </div>
       </div>
     </nav>

@@ -12,6 +12,8 @@
 
 .name {
   padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.04em;
@@ -20,6 +22,15 @@
 }
 
 .btn {
+  margin-left: 15px;
+  margin-right: 50px;
   color: getColor("text-secondary");
   cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
 }

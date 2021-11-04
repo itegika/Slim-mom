@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/LoginPage/LoginPage.jsx"],"names":["LoginPage"],"mappings":"kIAAA,yBAMeA,UAJG,WAChB,OAAO","file":"static/js/3.4d949afc.chunk.js","sourcesContent":["import styles from \"./LoginPage.module.scss\";\n\nconst LoginPage = () => {\n  return <div>LoginPage</div>;\n};\n\nexport default LoginPage;\n"],"sourceRoot":""}

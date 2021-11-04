@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 
-const modalWindow = document.querySelector("#modal");
+// const modalWindow = document.querySelector("#modal");
 
 const Modal = ({ onClose, children }) => {
   useEffect(() => {
@@ -12,6 +12,7 @@ const Modal = ({ onClose, children }) => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+  
   const handleKeyDown = (e) => {
     if (e.code === "Escape") {
       onClose();

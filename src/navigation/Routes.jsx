@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import PrivateRoute from "../shared/components/PrivateRoute";
 import PublicRoute from "../shared/components/PublicRoute";
 

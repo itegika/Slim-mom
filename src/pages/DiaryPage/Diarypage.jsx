@@ -1,19 +1,16 @@
 import DiaryProductsList from "./DiaryProductsList";
 import DiaryAddProductForm from "./DiaryAddProductForm";
 import DiaryDateСalendar from "./DiaryDateСalendar";
-import { useState } from "react";
-import { postDay } from "../../shared/services/day";
-
 import styles from "./DiaryPage.module.scss";
 import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage/AuthorizedPage";
 import SideBar from "../../client/SideBar/SideBar";
 
 const DiaryPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpenModal = () => {
-    setIsOpen(true);
-  };
+  // const handleOpenModal = () => {
+  //   setIsOpen(true);
+  // };
 
   // {isOpen ? () : ()}
 
@@ -27,7 +24,7 @@ const DiaryPage = () => {
           className={`${styles.DiaryForm} ${styles.visuallyHidden}`}
         />
         <DiaryProductsList className={styles.DiaryList} />
-        <button onClick={handleOpenModal} className={styles.OpenFormButton}>
+        <button  className={styles.OpenFormButton}>
           +
         </button>
       </div>

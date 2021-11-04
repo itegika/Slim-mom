@@ -1,2 +1,0 @@
-(this["webpackJsonpslim-mom"]=this["webpackJsonpslim-mom"]||[]).push([[5],{203:function(i,s,t){},206:function(i,s,t){"use strict";t.r(s);t(203);var e=t(2);s.default=function(){return Object(e.jsx)("div",{children:"RegisterPage"})}}}]);
-//# sourceMappingURL=5.d4c48b5e.chunk.js.map

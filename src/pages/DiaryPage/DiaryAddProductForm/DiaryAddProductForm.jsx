@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+
 // import AsyncSelect from "react-select/async";
 import Select from "react-select";
 // import { handleInputChange } from "react-select/dist/declarations/src/utils";
 import styles from "./DiaryAddProductForm.module.scss";
 import TextField from "../../../shared/components/TextField";
-import Button from "../../../shared/components/Button";
-import { getProducts } from "../../../shared/services/products";
 
 const DiaryAddProductForm = () => {
   // useEffect(() => {

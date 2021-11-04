@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/RegisterPage/RegisterPage.jsx"],"names":["RegisterPage"],"mappings":"kIAAA,yBAMeA,UAJM,WACnB,OAAO","file":"static/js/5.d4c48b5e.chunk.js","sourcesContent":["import styles from \"./RegisterPage.module.scss\";\n\nconst RegisterPage = () => {\n  return <div>RegisterPage</div>;\n};\n\nexport default RegisterPage;\n"],"sourceRoot":""}

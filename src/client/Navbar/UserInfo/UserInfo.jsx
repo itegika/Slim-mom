@@ -10,18 +10,15 @@ const UserInfo = () => {
   const dispatch = useDispatch();
   const name = useSelector(fetchName);
   return (
-    <div className="container">
-      <div className={styles.row}></div>
-      <div className={styles.userInfo}>
-        <span className={styles.name}>{name}</span>
-        <button
-          type="button"
-          className={styles.btn}
-          onClick={() => dispatch(operations.logOut())}
-        >
-          Выйти
-        </button>
-      </div>
+    <div className={styles.userInfo}>
+      <span className={styles.name}>{name}</span>
+      <button
+        type="button"
+        className={styles.btn}
+        onClick={() => dispatch(operations.logOut())}
+      >
+        Выйти
+      </button>
     </div>
   );
 };

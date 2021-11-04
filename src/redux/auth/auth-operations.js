@@ -4,7 +4,6 @@ import {
   onSignUp,
   onLogIn,
   onLogOut,
-  instance,
   CheckedCurrentUser,
 } from "../../shared/services/auth";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
@@ -45,14 +44,17 @@ const logIn = createAsyncThunk(
   }
 );
 
-const logOut = createAsyncThunk("auth/logout", async ({ rejectWithValue }) => {
-  try {
-    await onLogOut();
-    token.unset();
-  } catch (error) {
-    return rejectWithValue(error.message);
+const logOut = createAsyncThunk(
+  "auth/logout",
+  async (_, { rejectWithValue }) => {
+    try {
+      await onLogOut();
+      token.unset();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
   }
-});
+);
 
 const CheckedIsLoginCurrentUser = createAsyncThunk(
   "auth/checked",
@@ -64,7 +66,7 @@ const CheckedIsLoginCurrentUser = createAsyncThunk(
     }
     token.set(persistedToken);
     try {
-      const data = await CheckedCurrentUser(persistedToken);
+      const data = await CheckedCurrentUser();
       return data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err);

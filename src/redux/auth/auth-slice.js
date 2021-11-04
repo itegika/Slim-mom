@@ -3,7 +3,7 @@ import authOperations from "./auth-operations";
 
 const initialState = {
   user: {
-    name: "",
+    username: "",
     email: "",
   },
   token: "",
@@ -28,9 +28,9 @@ export const authSlice = createSlice({
     [authOperations.logIn.rejected](state, { payload }) {
       state.error = payload;
     },
-    [authOperations.logOut.fulfilled](state, { payload }) {
-      state.user = payload.user;
-      state.token = payload.token;
+    [authOperations.logOut.fulfilled](state, _) {
+      state.user = initialState.user;
+      state.token = "";
     },
     [authOperations.logOut.rejected](state, { payload }) {
       state.error = payload;

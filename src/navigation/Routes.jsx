@@ -15,7 +15,7 @@ const Routes = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
-        <PublicRoute restricted exact path="/">
+        <PublicRoute restricted exact path="/"  redirectTo="/calculator">
           <MainPage />
         </PublicRoute>
         <PublicRoute restricted exact path="/login" redirectTo="/calculator">

@@ -1,34 +1,45 @@
 import DiaryProductsList from "./DiaryProductsList";
 import DiaryAddProductForm from "./DiaryAddProductForm";
 import DiaryDateСalendar from "./DiaryDateСalendar";
+import Modal from "./Modal";
+
+import { useState } from "react";
+import { postDay } from "../../shared/services/day";
+
 import styles from "./DiaryPage.module.scss";
 import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage/AuthorizedPage";
 import SideBar from "../../client/SideBar/SideBar";
 
 const DiaryPage = () => {
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // const handleOpenModal = () => {
-  //   setIsOpen(true);
-  // };
-
-  // {isOpen ? () : ()}
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
   return (
-    <AuthorizedPageContainer>
-      <div className={styles.DiaryConteiner}>
-        <div className={styles.DiaryCalendar}>
-          <DiaryDateСalendar />
-        </div>
-        <DiaryAddProductForm
-          className={`${styles.DiaryForm} ${styles.visuallyHidden}`}
+    <div className={styles.DiaryConteiner}>
+      {isOpen ? (
+        <Modal
+          onClose={() => {
+            setIsOpen(false);
+          }}
         />
-        <DiaryProductsList className={styles.DiaryList} />
-        <button  className={styles.OpenFormButton}>
-          +
-        </button>
-      </div>
-    </AuthorizedPageContainer>
+      ) : (
+        <>
+          <div className={styles.DiaryCalendar}>
+            <DiaryDateСalendar />
+          </div>
+          <div className={styles.visuallyHidden}>
+            <DiaryAddProductForm />
+          </div>
+          <DiaryProductsList className={styles.DiaryList} />
+          <button onClick={handleOpenModal} className={styles.OpenFormButton}>
+            +
+          </button>
+        </>
+      )}
+    </div>
   );
 };
 

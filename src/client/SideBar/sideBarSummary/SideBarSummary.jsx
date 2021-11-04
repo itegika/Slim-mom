@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { getCurrentUserInfootAllowedProducts } from "../../../redux/calendar/summaries/summaries-selectors";
+import {  getnotAllowedProducts } from "../../../redux/calendar/summaries/summaries-selectors";
 import styles from "./SideBarSummary.module.scss";
 
 const summary = {
@@ -13,7 +13,7 @@ const summary = {
 };
 
 const SideBarSummary = () => {
-  // const summary = useSelector(getCurrentUserInfootAllowedProducts);
+  // const summary = useSelector(getnotAllowedProducts);
 
   return (
     <>

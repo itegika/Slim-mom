@@ -1,17 +1,23 @@
 import { useState } from "react";
+
 import styles from "./MainPage.module.scss";
+
 import Button from "../../shared/components/Button";
 import TextField from "../../shared/components/TextField";
 import RadioGroup from "../../shared/components/RadioGroup";
 import Modal from "../../client/Modal";
+import ModalInfo from "../../shared/components/ModalInfo";
+import { getDailyRate } from "../../shared/services/daily";
 import useForm from "../../shared/hooks/useForm";
 import { initialState } from "./initialState";
+
 const MainPage = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, () => {
     return;
   });
-  const [newData, setNewData] = useState({ ...initialState });
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [calories, setCalories] = useState(null);
 
   const toggleModal = () => {
     setModalIsOpen(!modalIsOpen);
@@ -49,15 +55,25 @@ const MainPage = () => {
     },
   ];
 
-  const onFormSubmit = (e) => {
+  const onFormSubmit = async (e) => {
     e.preventDefault();
 
     const aaa = Object.entries(data);
     const bbb = aaa.map(([key, value]) => [key, Number(value)]);
-    const ccc = Object.fromEntries(bbb);
+    const ccc = await Object.fromEntries(bbb);
 
-    setNewData(ccc);
     toggleModal();
+    try {
+      const { data } = await getDailyRate(ccc);
+      const { dailyRate, notAllowedProducts } = await data;
+      setCalories(dailyRate);
+      setProducts(notAllowedProducts.slice(0, 4));
+    } catch (error) {
+      console.log(error);
+    }
+
+    e.target.reset();
+    handleSubmit(e);
   };
 
   return (
@@ -66,7 +82,11 @@ const MainPage = () => {
         <h1 className={styles.title}>
           Просчитай свою суточную норму калорий прямо сейчас
         </h1>
-        {modalIsOpen && <Modal onClose={toggleModal}></Modal>}
+        {modalIsOpen && (
+          <Modal onClose={toggleModal}>
+            <ModalInfo products={products} calories={calories} />
+          </Modal>
+        )}
         <form onSubmit={onFormSubmit} className={styles.form}>
           <div className={styles.fields}>
             <div className={styles.field}>

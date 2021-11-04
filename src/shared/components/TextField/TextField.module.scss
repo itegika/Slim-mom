@@ -43,14 +43,14 @@
       border-bottom: 1px solid getColor("accent");
       outline: none;
       &::placeholder {
-          color: getColor("accent");   
+        color: getColor("accent");
+      }
     }
-  }
     @include tablet {
       width: 240px;
     }
     @include desktop {
-      width: 240px;  
+      width: 240px;
     }
 
     &::placeholder {
@@ -58,6 +58,7 @@
       font-size: 14px;
       line-height: 17px;
       letter-spacing: 0.04em;
-      color: getColor("text-secondary");       
+      color: getColor("text-secondary");
     }
   }
+}

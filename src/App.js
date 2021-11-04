@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { addItem } from "./redux/calendar/productItems/productItems-operations";
 // import { postDay } from "./shared/services/day";
 // import { getDailyRateById } from "./shared/services/daily";
+import "./shared/styles/common.scss";
 
 function App() {
   const dispatch = useDispatch();

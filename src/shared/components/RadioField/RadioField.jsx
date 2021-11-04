@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import useUniqueString from "../../hooks/useUniqueString";
 import styles from "./RadioField.module.scss";
 
-const RadioField = ({ onChange, label, name, checked }) => {
+const RadioField = ({ onChange, label, name, required, dataRadio }) => {
   const id = useUniqueString();
   return (
     <div className={styles.radioBox}>
@@ -11,8 +11,9 @@ const RadioField = ({ onChange, label, name, checked }) => {
         name={name}
         id={id}
         type="radio"
+        data-radio={dataRadio}
         onChange={onChange}
-        checked={checked && checked}
+        required={required && required}
         className={`${styles.radioButton} ${styles.visuallyHidden}`}
       />
       <label htmlFor={id} className={styles.radioLabel}>
@@ -24,8 +25,10 @@ const RadioField = ({ onChange, label, name, checked }) => {
 };
 RadioField.defaultProps = {
   onChange: () => {},
+  required: false,
 };
 RadioField.propTypes = {
+  required: PropTypes.bool,
   onChange: PropTypes.func,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,

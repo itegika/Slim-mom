@@ -10,6 +10,9 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { calendarReducer } from "./calendar/calendar-reducer";
+import authReducer from "./auth/auth-slice";
+
 
 const persistConfig = {
   key: "user",
@@ -17,19 +20,10 @@ const persistConfig = {
   whitelist: ["token"],
 };
 
-const initialState = {
-  user: { name: null, email: null },
-};
-const authSlice = createSlice({
-  name: "auth",
-  initialState,
-  extraReducers: {},
-});
-
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(persistConfig, authSlice.reducer),
-    // calendar: null,
+    auth: persistReducer(persistConfig, authReducer),
+    calendar: calendarReducer,
     // notAllowedProducts: null,
   },
   middleware: (getDefaultMiddleware) =>

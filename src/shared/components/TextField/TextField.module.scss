@@ -1,4 +1,4 @@
-@import "../../shared/styles/common.scss";
+@import "../../styles/common.scss";
 
 .formInput {
   width: 290px;
@@ -18,7 +18,13 @@
   @include desktop {
     width: 240px;
   }
-
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid getColor("accent");
+    &::placeholder {
+      color: getColor("accent");
+    }
+  }
   &::placeholder {
     font-family: $font-primary;
     font-weight: 700;

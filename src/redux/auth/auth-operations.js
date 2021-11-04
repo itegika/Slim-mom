@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { token, onSignUp, onLogIn } from "../../shared/services/auth";
+import { token, onSignUp, onLogIn, onLogOut } from "../../shared/services/auth";
 
 const register = createAsyncThunk(
   "auth/register",
@@ -27,8 +27,18 @@ const logIn = createAsyncThunk(
   }
 );
 
+const logOut = createAsyncThunk("auth/logout", async ({ rejectWithValue }) => {
+  try {
+    await onLogOut();
+    token.unset();
+  } catch (error) {
+    return rejectWithValue(error.message);
+  }
+});
+
 const authOperations = {
   register,
   logIn,
+  logOut,
 };
 export default authOperations;

@@ -1,1 +1,42 @@
-@import "../../shared//styles/common.scss";
+@import "../../shared/styles/common.scss";
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include desktop {
+    justify-content: start;
+    align-items: baseline;
+  }
+}
+
+.nav {
+  padding: 18px 15px;
+
+  @include desktop {
+    align-items: baseline;
+  }
+
+  border-bottom: 2px solid getColor("border-color");
+
+  @include tablet {
+    border-bottom: 2px solid getColor("border-color");
+  }
+
+  @include desktop {
+    border-bottom: none;
+    padding: 80px 90px;
+  }
+}
+
+.logo {
+  margin-right: auto;
+
+  @include tablet {
+    margin-right: auto;
+  }
+  @include desktop {
+    margin: 0;
+    padding-right: 20px;
+  }
+}

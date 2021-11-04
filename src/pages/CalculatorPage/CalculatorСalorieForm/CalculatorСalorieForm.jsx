@@ -2,6 +2,7 @@ import styles from "./CalculatorСalorieForm.module.scss";
 import TextField from "../../../shared/components/TextField";
 import RadioGroup from "../../../shared/components/RadioGroup";
 import { useState } from "react";
+import Button from "../../../shared/components/Button";
 
 const CalculatorСalorieForm = () => {
   const [bloodValue, setBloodValue] = useState(null);
@@ -51,7 +52,7 @@ const CalculatorСalorieForm = () => {
         <div className={styles.CalculatorTextField}>
           <TextField
             // onChange
-            label="height"
+            // label="height"
             type="text"
             name="height"
             placeholder="Рост"
@@ -59,7 +60,7 @@ const CalculatorСalorieForm = () => {
             required="true"
           />
           <TextField
-            label="age"
+            // label="age"
             type="text"
             name="age"
             placeholder="Возраст"
@@ -67,7 +68,7 @@ const CalculatorСalorieForm = () => {
             required="true"
           />
           <TextField
-            label="weight"
+            // label="weight"
             type="text"
             name="weight"
             placeholder="Текущий вес"
@@ -75,7 +76,7 @@ const CalculatorСalorieForm = () => {
             required="true"
           />
           <TextField
-            label="desiredWeight"
+            // label="desiredWeight"
             type="text"
             name="desiredWeight"
             placeholder="Желаемый вес"
@@ -132,9 +133,10 @@ const CalculatorСalorieForm = () => {
             </span> */}
           </div>
         </div>
-        <button type="submit" className={styles.CalculatorBtn}>
+        <Button type="submit" variant="primary" text="Похудеть" />
+        {/* <button type="submit" className={styles.CalculatorBtn}>
           Похудеть
-        </button>
+        </button> */}
       </form>
     </>
   );

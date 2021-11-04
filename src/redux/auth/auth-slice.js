@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: "auth",
   initialState,
   extraReducers: {
@@ -23,9 +23,16 @@ const authSlice = createSlice({
     },
     [authOperations.logIn.fulfilled](state, { payload }) {
       state.user = payload.user;
-      state.token = payload.token;
+      state.token = payload.accessToken;
     },
     [authOperations.logIn.rejected](state, { payload }) {
+      state.error = payload;
+    },
+    [authOperations.logOut.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
+    },
+    [authOperations.logOut.rejected](state, { payload }) {
       state.error = payload;
     },
   },

@@ -3,6 +3,7 @@ import DiaryAddProductForm from "./DiaryAddProductForm";
 import DiaryDateСalendar from "./DiaryDateСalendar";
 
 import { useState } from "react";
+import { postDay } from "../../shared/services/day";
 
 import styles from "./DiaryPage.module.scss";
 

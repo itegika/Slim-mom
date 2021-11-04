@@ -1,22 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { addItem } from "./productItems-operations";
 
-const eatenProductsSlice = createSlice({
-  name: "eatenProducts",
-  initialState: [],
-  reducers: {
-    addToEatenProducts: {
-      reducer: (_, { payload }) => {
-        return [...payload];
-      },
-    },
+const initialState = {};
 
-    removeFromEatenProducts: (store, { payload }) =>
-      store.filter(({ id }) => id !== payload),
+const itemSlice = createSlice({
+  name: "items",
+  initialState,
+  extraReducers: {
+    [addItem.fulfilled]: (state, { payload }) => payload,
   },
 });
-
-const { actions, reducer } = eatenProductsSlice;
-
-export const { addToEatenProducts, removeFromEatenProducts } = actions;
-
-export default reducer;
+export default itemSlice.reducer;

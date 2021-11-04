@@ -22,6 +22,13 @@ const logIn = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
+      console.log(error);
+      alert(error.response);
+      // if (error.response.status === 403) {
+      //   return alert("User creation error! Try signup again.");
+      // }
+
+      alert(error.response.status.message);
       return rejectWithValue(error.message);
     }
   }

@@ -1,5 +1,4 @@
 import Sidebar from "../../../client/SideBar";
-
 import styles from "./AuthorizedPage.module.scss";
 
 const AuthorizedPageContainer = ({ children }) => {

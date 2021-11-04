@@ -28,7 +28,6 @@ const DiaryPage = () => {
           +
         </button>
       </div>
-      <SideBar />
     </AuthorizedPageContainer>
   );
 };

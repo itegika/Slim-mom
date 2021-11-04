@@ -7765,6 +7765,11 @@
     "query-string" "^4.1.0"
     "sort-keys" "^1.0.0"
 
+"notiflix@^3.1.0":
+  "integrity" "sha512-6Szjwlxy+HvJCqosi0hHhlsWnVhbrhTCpd99C1AaZWp2Xq3VQxeC5guMdMV4MzQT8NtKvzJy2Pchc5AXId2u0w=="
+  "resolved" "https://registry.npmjs.org/notiflix/-/notiflix-3.1.0.tgz"
+  "version" "3.1.0"
+
 "npm-run-path@^2.0.0":
   "integrity" "sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8="
   "resolved" "https://registry.npmjs.org/npm-run-path/-/npm-run-path-2.0.2.tgz"

@@ -1,7 +1,7 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 83px;
+  //   margin-top: 83px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +31,7 @@
 // }
 @media screen and (min-width: 768px) {
   .container {
-    margin-top: 156px;
+    // margin-top: 156px;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;

@@ -1,6 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { token, onSignUp, onLogIn, onLogOut } from "../../shared/services/auth";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
+const errorNotify = {
+  403: "This email doesn't exist or password is wrong",
+  409: "Provided email already exists, try another",
+  showAlert(code) {
+    const message = this[String(code)];
+    alert(message);
+  },
+};
 const register = createAsyncThunk(
   "auth/register",
   async (credentials, { rejectWithValue }) => {
@@ -9,6 +18,7 @@ const register = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
+      Notify.failure(errorNotify.showAlert(error.response.status));
       return rejectWithValue(error.message);
     }
   }
@@ -22,14 +32,8 @@ const logIn = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
-      console.log(error);
-      alert(error.response);
-      // if (error.response.status === 403) {
-      //   return alert("User creation error! Try signup again.");
-      // }
-
-      alert(error.response.status.message);
-      return rejectWithValue(error.message);
+      Notify.failure(errorNotify.showAlert(error.response.status));
+      return rejectWithValue(error);
     }
   }
 );

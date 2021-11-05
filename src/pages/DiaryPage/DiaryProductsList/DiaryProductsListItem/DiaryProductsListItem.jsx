@@ -1,7 +1,7 @@
 import styles from "./DiaryProductsListItem.module.scss";
 
 const DiaryProductsListItem = ({ product }) => {
-  const { id, name, weight, kcal } = product;
+  const { id, title, weight, kcal } = product;
 
   const onDelete = (id) => {
     // dispatch(removeContact(id));
@@ -9,7 +9,7 @@ const DiaryProductsListItem = ({ product }) => {
 
   return (
     <li className={styles.productsItem}>
-      <span className={styles.productsName}>{name}</span>
+      <span className={styles.productsName}>{title}</span>
       <span className={styles.productsWeight}>{weight} г</span>
       <span className={styles.productsKcal}>
         {kcal}

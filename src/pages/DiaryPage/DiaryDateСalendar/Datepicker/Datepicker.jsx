@@ -9,9 +9,8 @@ import { pickData } from "../../../../redux/calendar/summaries/summaries-operati
 const Datepicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [isOpen, setIsOpen] = useState(false);
-const  dispatch = useDispatch()
-         
-    //
+  const dispatch = useDispatch();
+
   const handleChange = (e) => {
     setIsOpen(!isOpen);
     setStartDate(e);
@@ -19,8 +18,11 @@ const  dispatch = useDispatch()
   const handleClick = (e) => {
     e.preventDefault();
     setIsOpen(!isOpen);
-    dispatch(pickData({
-  "date": "2020-12-31"}))
+    dispatch(
+      pickData({
+        date: "2020-12-31",
+      })
+    );
   };
 
   const formatDate = (date) => {

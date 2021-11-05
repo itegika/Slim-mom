@@ -16,7 +16,7 @@ const DiaryProductsList = () => {
 
   return (
     <ul className={styles.productsList}>
-      {eatenProducts ? productsListMarkup : <p>Nothing found</p>}
+      {productsListMarkup ? productsListMarkup : <p>Nothing found</p>}
     </ul>
   );
 };

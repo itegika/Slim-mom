@@ -10,8 +10,10 @@ export async function postDayInfo(options) {
   return data;
 }
 export async function deleteProductItem(options) {
-  const { data } = await instance.delete("/day", options);
-  return data;
+  const { data } = await instance.delete("/day", {
+    data: options,
+  });
+  return { data, options };
 }
 
 // {

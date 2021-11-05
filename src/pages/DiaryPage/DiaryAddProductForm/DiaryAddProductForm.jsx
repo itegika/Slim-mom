@@ -21,8 +21,8 @@ const DiaryAddProductForm = () => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    const data = { productId, weight: Number(weight) };
-    console.log(data);
+    // const data = { productId, weight: Number(weight) };
+    // console.log(data);
 
     dispatch(
       addProduct({

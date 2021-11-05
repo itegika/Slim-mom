@@ -1,10 +1,22 @@
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { deleteProduct } from "../../../../redux/calendar/summaries/summaries-operations";
+import { getDayId } from "../../../../redux/calendar/summaries/summaries-selectors";
 import styles from "./DiaryProductsListItem.module.scss";
 
 const DiaryProductsListItem = ({ product }) => {
   const { id, title, weight, kcal } = product;
+  const dayId = useSelector(getDayId);
+  const dispatch = useDispatch();
+  const eatenProductId = id;
 
-  const onDelete = (id) => {
-    // dispatch(removeContact(id));
+  const obj = {
+    dayId,
+    eatenProductId,
+  };
+
+  const onDelete = () => {
+    dispatch(deleteProduct(obj));
   };
 
   return (
@@ -12,16 +24,14 @@ const DiaryProductsListItem = ({ product }) => {
       <span className={styles.productsName}>{title}</span>
       <span className={styles.productsWeight}>{weight} г</span>
       <span className={styles.productsKcal}>
-        {kcal}
+        {Math.round(kcal)}
         <span className={styles.productsUnits}> ккал</span>
       </span>
 
       <button
         type="button"
         className={styles.productsButton}
-        onClick={() => {
-          onDelete(id);
-        }}
+        onClick={onDelete}
       >
         +
       </button>

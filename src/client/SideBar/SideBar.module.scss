@@ -1,13 +1,22 @@
-.SideBar {
-  display: flex;
-  flex-direction: column;
-  @media screen and (min-width: 768px) {
+@import "../../shared/styles/common.scss";
+.sideBarDiv {
+  background-color: getColor("bg-secondary");
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  @include tablet {
     display: flex;
     flex-direction: row;
+    background-position: 128% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../shared/images/sidebar/RightSideBarImgTablet.png");
   }
-  @media screen and (min-width: 1280px) {
-    display: flex;
-    flex-direction: column;
-    width: 535px;
+  @include desktop {
+    background-position: 100% 40%;
+    background-repeat: no-repeat;
+    background-image: url("../../shared/images/sidebar/RightSideBarImgDesktop.png");
   }
 }

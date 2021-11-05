@@ -1,48 +1,43 @@
+@import "../../../shared/styles/common.scss";
 .summaryDiv {
-  @media screen and (min-width: 768px) {
-    padding-bottom: 96px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  max-width: 350px;
+  @include tablet {
+    max-width: 310px;
+    margin-top: 91px;
   }
-  @media screen and (min-width: 1280px) {
-    padding-bottom: 0px;
+
+  @include desktop {
+    margin-top: 143px;
   }
 }
 
 .summaryTitle {
-  padding-top: 30px;
-  padding-bottom: 20px;
-  margin: 0;
-  margin-left: 15px;
-  text-align: start;
+  padding-top: 40px;
+  margin-bottom: 20px;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.2;
+  @include tablet {
+    padding: 0;
+  }
 
-  @media screen and (min-width: 768px) {
-    padding-left: 87px;
-    margin: auto;
-    padding-bottom: 45px;
-    padding-top: 95px;
+  @include desktop {
   }
 }
 
 .summaryList {
-  padding-left: 15px;
-  margin-bottom: auto;
-  @media screen and (min-width: 768px) {
-    padding-left: 87px;
-  }
+  color: getColor("text-secondary");
+  font-weight: 400;
 }
 
 .summaryItem {
-  font-size: 14px;
-  line-height: 1.2;
   display: flex;
   justify-content: space-between;
   &:not(:last-child) {
     margin-bottom: 23px;
-  }
-  @media screen and (min-width: 768px) {
-    justify-content: space-between;
   }
 }
 

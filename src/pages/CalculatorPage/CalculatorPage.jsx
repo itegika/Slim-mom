@@ -71,7 +71,7 @@ const CalculatorPage = () => {
 
   return (
       <AuthorizedPageContainer>
-      <div className="container">
+      <div className={`${styles.mainDiv} container`}>
         <h1 className={styles.title}>
           Просчитай свою суточную норму калорий прямо сейчас
         </h1>

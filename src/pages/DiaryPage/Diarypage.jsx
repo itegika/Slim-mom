@@ -18,28 +18,30 @@ const DiaryPage = () => {
   };
 
   return (
-    <div className={styles.DiaryConteiner}>
-      {isOpen ? (
-        <Modal
-          onClose={() => {
-            setIsOpen(false);
-          }}
-        />
-      ) : (
-        <>
-          <div className={styles.DiaryCalendar}>
-            <DiaryDateСalendar />
-          </div>
-          <div className={styles.visuallyHidden}>
-            <DiaryAddProductForm />
-          </div>
-          <DiaryProductsList className={styles.DiaryList} />
-          <button onClick={handleOpenModal} className={styles.OpenFormButton}>
-            +
-          </button>
-        </>
-      )}
-    </div>
+    <AuthorizedPageContainer>
+      <div className={styles.DiaryConteiner}>
+        {isOpen ? (
+          <Modal
+            onClose={() => {
+              setIsOpen(false);
+            }}
+          />
+        ) : (
+          <>
+            <div className={styles.DiaryCalendar}>
+              <DiaryDateСalendar />
+            </div>
+            <div className={styles.visuallyHidden}>
+              <DiaryAddProductForm />
+            </div>
+            <DiaryProductsList className={styles.DiaryList} />
+            <button onClick={handleOpenModal} className={styles.OpenFormButton}>
+              +
+            </button>
+          </>
+        )}
+      </div>
+    </AuthorizedPageContainer>
   );
 };
 

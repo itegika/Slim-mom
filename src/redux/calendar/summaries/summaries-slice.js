@@ -44,12 +44,12 @@ const summariesSlice = createSlice({
     },
 
     [addProduct.fulfilled](state, { payload }) {
-      state.dayId = payload.newDay.id;
-      state.date = payload.newDay.date;
-      state.eatenProducts = payload.newDay.eatenProducts;
-      state.todaySummary = payload.newDay.newSummary;
-      state.dailyRate = payload.newDay.dailyRate;
-      state.userId = payload.newDay.userId;
+      state.dayId = payload.day.id;
+      state.date = payload.day.date;
+      state.eatenProducts = payload.day.eatenProducts;
+      state.todaySummary = payload.daySummary;
+      state.dailyRate = payload.day.dailyRate;
+      state.userId = payload.day.userId;
     },
     // [currentDate.fulfilled](state, { payload }) {
     //   state.todaySummary = payload;

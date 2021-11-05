@@ -12,20 +12,20 @@ const DiaryPage = lazy(() => import("../pages/DiaryPage/Diarypage"));
 const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
 const MainPage = lazy(() => import("../pages/MainPage/MainPage"));
 const RegisterPage = lazy(() => import("../pages/RegisterPage/RegisterPage"));
-const Navbar = lazy(()=>import("../client/Navbar/Navbar"));
+const Navbar = lazy(() => import("../client/Navbar/Navbar"));
 
 const Routes = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
-        <PublicRoute restricted exact path="/"  redirectTo="/calculator">
+        <PublicRoute restricted exact path="/" redirectTo="/calculator">
           <div className={styles.App}>
             <Navbar />
             <MainPage />
           </div>
         </PublicRoute>
         <PublicRoute restricted exact path="/login" redirectTo="/calculator">
-          <div  className={styles.App}> 
+          <div className={styles.App}>
             <Navbar />
             <LoginPage />
           </div>
@@ -34,20 +34,23 @@ const Routes = () => {
           restricted
           exact
           path="/registration"
-          redirectTo="/calculator"
-        >
-          <div  className={styles.App}>
+          redirectTo="/calculator">
+          <div className={styles.App}>
             <Navbar />
             <RegisterPage />
-          </div>  
+          </div>
         </PublicRoute>
         <PrivateRoute exact path="/diary" redirectTo="/login">
-          <Navbar />
-          <DiaryPage />
+          <div className={styles.sideBarDiv}>
+            <Navbar />
+            <DiaryPage />
+          </div>
         </PrivateRoute>
         <PrivateRoute exact path="/calculator" redirectTo="/login">
-          <Navbar />
-          <CalculatorPage />
+          <div className={styles.sideBarDiv}>
+            <Navbar />
+            <CalculatorPage />
+          </div>
         </PrivateRoute>
       </Switch>
     </Suspense>

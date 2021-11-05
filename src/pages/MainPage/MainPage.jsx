@@ -16,6 +16,7 @@ const MainPage = () => {
     return;
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [bldType, setBldType] = useState(null);
   const [products, setProducts] = useState([]);
   const [calories, setCalories] = useState(null);
 
@@ -26,28 +27,28 @@ const MainPage = () => {
   const name = "bloodType";
   const itemsOptions = [
     {
-      onChange: handleChange,
+      onChange: ()=>{setBldType(1)},
       name,
       label: "1",
       dataRadio: 1,
       required: true,
     },
     {
-      onChange: handleChange,
+      onChange: ()=>{setBldType(2)},
       name,
       dataRadio: 2,
 
       label: "2",
     },
     {
-      onChange: handleChange,
+      onChange: ()=>{setBldType(3)},
       name,
       dataRadio: 3,
 
       label: "3",
     },
     {
-      onChange: handleChange,
+      onChange: ()=>{setBldType(4)},
       name,
       dataRadio: 4,
 
@@ -61,8 +62,8 @@ const MainPage = () => {
     const arrOfArr = Object.entries(data);
     const arrToNum = arrOfArr.map(([key, value]) => [key, Number(value)]);
     const arrToObj = await Object.fromEntries(arrToNum);
-
-    toggleModal();
+    arrToObj["bloodType"] = bldType;
+    
     try {
       const { data } = await getDailyRate(arrToObj);
       const { dailyRate, notAllowedProducts } = await data;
@@ -70,8 +71,8 @@ const MainPage = () => {
       setProducts(notAllowedProducts.slice(0, 4));
     } catch (error) {
       console.log(error);
-    }
-
+    }    
+    toggleModal();
     e.target.reset();
     handleSubmit(e);
   };
@@ -97,6 +98,9 @@ const MainPage = () => {
                 value={data["height"]}
                 onChange={handleChange}
                 placeholder="Рост"
+                min="100"
+                max="250"
+                type="number"
               />
             </div>
             <div className={styles.field}>
@@ -107,6 +111,9 @@ const MainPage = () => {
                 name="age"
                 onChange={handleChange}
                 placeholder="Возраст"
+                min="18"
+                max="100"
+                type="number"
               />
             </div>
             <div className={styles.field}>
@@ -117,6 +124,9 @@ const MainPage = () => {
                 name="weight"
                 onChange={handleChange}
                 placeholder="Текущий вес"
+                min="0"
+                max="500"
+                type="number"
               />
             </div>
             <div className={styles.field}>
@@ -127,6 +137,9 @@ const MainPage = () => {
                 name="desiredWeight"
                 onChange={handleChange}
                 placeholder="Желаемый вес"
+                min="0"
+                max="500"
+                type="number"
               />
             </div>
 

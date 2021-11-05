@@ -21,47 +21,54 @@ const RegisterForm = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
 
   return (
-    <div className={`${styles.main} container`}>
+    <div className={`container`}>
       {/* <div className={styles.container}> */}
       <h1 className={styles.title}>Регистрация</h1>
 
       <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
-        <TextField
-          // className={styles.input}
+        <div className={styles.fieldsBox}>
+          <div className={styles.textField}>    
+           <TextField
           {...inputAttr.name}
           onChange={handleChange}
           value={data.username}
-        />
-        <TextField
-          // className={styles.input}
+          />
+        </div>
+        <div  className={styles.textField}> 
+          <TextField
           {...inputAttr.email}
           onChange={handleChange}
           name="email"
           required
           placeholder="Логин"
           value={data.email}
-        />
-        <TextField
-          // className={styles.input}
-          {...inputAttr.password}
-          onChange={handleChange}
-          name="password"
-          required
-          placeholder="Пароль"
-          value={data.password}
-        />
-        <div>
-          {/* <Link to="/login"> */}
+          />
+        </div>
+        <div  className={styles.textField}>
+          <TextField
+            {...inputAttr.password}
+            onChange={handleChange}
+            name="password"
+            required
+            placeholder="Пароль"
+            value={data.password}
+          />
+        </div>
+   
+       
+        </div>
+        <div className={styles.btnBox}>
+          <Link to="/login">
           {/* // поменять путь когда создадим объект paths */}
-          {/* <Button
-              className={`${styles.button} ${styles.buttonSecondary} ${styles.regBtn}`}
+          <Button
+              className={`${styles.button} ${styles.buttonSecondary} ${styles.logBtn}`}
               text="Вход"
               type="submit"
               variant="secondary"
-            /> */}
-          {/* </Link> */}
+            />
+          </Link>
           <Button
-            className={`${styles.button} ${styles.buttonPrimary} ${styles.regBtn}`}
+            className={`${styles.button} ${styles.buttonPrimary} `}
             text="Регистрация"
             type="submit"
             variant="primary"

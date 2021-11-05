@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.row}>
+      <div className={!isLoggedIn? `${styles.row}`:`${styles.rowLog}`}>
         <div className={styles.logo}>
           <Link to="/" className={styles.link}>
             <Logo
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className={styles.menuRow}>
           <UserMenu isLoggedIn={isLoggedIn} />
         </div>
-        <div className={styles.infoRow}>{isLoggedIn && <UserInfo />}</div>
+        {isLoggedIn &&<div className={styles.infoRow}> <UserInfo /></div>}
       </div>
     </nav>
   );

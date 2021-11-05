@@ -42,9 +42,11 @@ const Routes = () => {
           </div>  
         </PublicRoute>
         <PrivateRoute exact path="/diary" redirectTo="/login">
+          <Navbar />
           <DiaryPage />
         </PrivateRoute>
         <PrivateRoute exact path="/calculator" redirectTo="/login">
+          <Navbar />
           <CalculatorPage />
         </PrivateRoute>
       </Switch>

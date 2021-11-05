@@ -1,25 +1,22 @@
-import { useState,useSelector } from "react";
 import styles from "./CalculatorPage.module.scss";
 import Button from "../../shared/components/Button";
 import TextField from "../../shared/components/TextField";
 import RadioGroup from "../../shared/components/RadioGroup";
-import {getDailyRateById } from "../../shared/services/daily";
 import useForm from "../../shared/hooks/useForm";
 import { initialState } from "./initialState";
 import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage/AuthorizedPage";
 import { getUserId } from "../../redux/calendar/summaries/summaries-selectors";
+import { useSelector ,useDispatch} from "react-redux";
+import { postDailyRate } from "../../redux/calendar/summaries/summaries-operations";
 
 const CalculatorPage = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, () => {
     return;
   });
-
-  // const idUser = useSelector(getUserId)
-  // console.log(idUser);
-
-  const [products, setProducts] = useState([]);
-  const [calories, setCalories] = useState(null);
-
+  const dispatch = useDispatch()
+  const idUser = useSelector(getUserId)
+ 
+  
 
   const name = "bloodType";
   const itemsOptions = [
@@ -57,14 +54,7 @@ const CalculatorPage = () => {
     const bbb = aaa.map(([key, value]) => [key, Number(value)]);
     const ccc = await Object.fromEntries(bbb);
 
-    try {
-      // const { data } = await getDailyRateById(ccc,id);
-      const { dailyRate, notAllowedProducts } = await data;
-      setCalories(dailyRate);
-      setProducts(notAllowedProducts.slice(0, 4));
-    } catch (error) {
-      throw error;
-    }
+    dispatch(postDailyRate({ccc,idUser}))
     e.target.reset();
     handleSubmit(e);
   };

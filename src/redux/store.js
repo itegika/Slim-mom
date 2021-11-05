@@ -12,6 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import { calendarReducer } from "./calendar/calendar-reducer";
 import authReducer from "./auth/auth-slice";
+import summaries from "./calendar/summaries/summaries-slice";
 
 
 const persistConfig = {
@@ -23,7 +24,7 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
-    calendar: calendarReducer,
+    calendar: summaries,
     // notAllowedProducts: null,
   },
   middleware: (getDefaultMiddleware) =>

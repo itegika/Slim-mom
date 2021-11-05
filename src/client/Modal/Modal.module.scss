@@ -53,7 +53,7 @@
   
   .closeModalBtnMobile {
     background-image: url('./closeM.svg');
-    background-color:transparent, getColor("bg-primary");
+    background-color: transparent;
     background-repeat: no-repeat;
     position: absolute;
     top: 18px;
@@ -66,7 +66,7 @@
   
   .closeModalBtn {
     background-image: url('./close.svg');
-    background-color:transparent, getColor("bg-primary");
+    background-color: transparent;
     background-repeat: no-repeat;
     display: none;
     position: absolute;

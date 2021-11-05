@@ -37,12 +37,13 @@ const summariesSlice = createSlice({
       state.dailyRate = payload.data.userData.dailyRate;
       state.days = payload.data.days;
       state.date = payload.date;
-      const eatenProducts = payload.data.days.find(
-        (el) => el.date === state.date
-      )?.eatenProducts;
-      state.eatenProduct = eatenProducts;
 
-      state.dayId = payload.data.days.find((el) => el.date === state.date)._id;
+      const currentDay = payload.data.days.find((el) => el.date === state.date);
+
+      const eatenProducts = currentDay.eatenProducts;
+      state.eatenProduct = eatenProducts;
+      state.todaySummary = currentDay.daySummary;
+      state.dayId = currentDay._id;
     },
     [postDailyRate.fulfilled](state, { payload }) {
       state.dailyRate = payload.data.dailyRate;

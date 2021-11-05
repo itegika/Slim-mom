@@ -4,7 +4,7 @@ import styles from "./SideBarRation.module.scss";
 
 const SideBarRation = () => {
   const notAllowedProducts = useSelector(getnotAllowedProducts)
-    .slice(0, 8)
+    .slice(0, 5)
     .join(", ");
 
   return (

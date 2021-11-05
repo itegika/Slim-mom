@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import authOperations from "./redux/auth/auth-operations";
 import { useEffect } from "react";
 
-
 import "./shared/styles/common.scss";
 
 function App() {

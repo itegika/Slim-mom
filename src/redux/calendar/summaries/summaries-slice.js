@@ -1,15 +1,15 @@
 import { createAction, createSlice } from "@reduxjs/toolkit";
+import { postDailyRate } from "./summaries-operations";
 
 
 const initialState = {
-  //   date: "",
-  //   kcalLeft: null,
-  //   kcalConsumed: null,
-  //   dailyRate: null,
-  //   percentsOfDailyRate: null,
-  //   userId: "",
-  //   id: "",
-  // todaySummary: null,
+  id: '',
+  date: '',
+  notAllowedProducts: [],
+  days: [],
+  dailyRate: '',
+  todaySummary: null,
+   userId: "",
 };
 const loginInfo = createAction("auth/login/fulfilled");
 const checkedUser = createAction("auth/checked/fulfilled");
@@ -18,8 +18,19 @@ const summariesSlice = createSlice({
   name: "summaries",
   initialState,
   extraReducers: {
-    [loginInfo]: (_, { payload }) => payload,
-    [checkedUser]: (_, { payload }) => payload,
+    [loginInfo]: (state, { payload }) => {
+      state.id = payload.id;
+    },
+    [checkedUser]: (state, { payload }) => {
+      state.id = payload.id;
+      state.notAllowedProducts = payload.userData.notAllowedProducts;
+      state.dailyRate = payload.userData.dailyRate;
+    },
+    [postDailyRate.fulfilled](state, { payload }) {
+      state.dailyRate = payload.data.dailyRate;
+      state.notAllowedProducts = payload.data.notAllowedProducts;
+      state.todaySummary = payload.data.summaries;
+    },
   },
 });
 

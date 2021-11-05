@@ -4,7 +4,8 @@ export const getSummariesInfo = (state) =>
 //   state.calendar?.summaries?.user?.userData?.notAllowedProducts;
 
 
-export const getUserId = (state) => state.calendar.summaries.id;
+// export const getUserId = (state) => state.calendar.id;
+export const getUserId = (state) =>state.calendar.id;
 
 // export const getUserId = (state) => state.calendar.summaries.user.id;
 

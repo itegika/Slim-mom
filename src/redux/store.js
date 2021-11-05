@@ -10,10 +10,8 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { calendarReducer } from "./calendar/calendar-reducer";
 import authReducer from "./auth/auth-slice";
 import summaries from "./calendar/summaries/summaries-slice";
-
 
 const persistConfig = {
   key: "user",

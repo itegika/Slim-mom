@@ -10,13 +10,8 @@ const DiaryProductsListItem = ({ product }) => {
   const dispatch = useDispatch();
   const eatenProductId = id;
 
-  const obj = {
-    dayId,
-    eatenProductId,
-  };
-
   const onDelete = () => {
-    dispatch(deleteProduct(obj));
+    dispatch(deleteProduct({ dayId, eatenProductId }));
   };
 
   return (

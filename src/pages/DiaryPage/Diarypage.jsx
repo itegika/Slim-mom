@@ -4,7 +4,6 @@ import DiaryDateСalendar from "./DiaryDateСalendar";
 import Modal from "./Modal";
 
 import { useState } from "react";
-import { postDay } from "../../shared/services/day";
 
 import styles from "./DiaryPage.module.scss";
 import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage/AuthorizedPage";

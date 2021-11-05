@@ -1,31 +1,16 @@
+@import "../../../shared/styles/common.scss";
 .rationWrapper {
-  width: 100%;
-  padding-bottom: 50px;
+  @include tablet {
+    max-width: 310px;
+    margin-top: 91px;
+  }
 }
 
 .rationTitle {
-  margin: auto;
-  padding-top: 50px;
-  padding-left: 15px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1.2;
-  @media screen and(min-width: 768px) {
-    padding-top: 95px;
-    padding-bottom: 45px;
-  }
-  @media screen and (min-width: 1280px) {
-    padding-top: 50px;
-    padding-bottom: 48px;
-  }
+  margin-bottom: 20px;
 }
 
 .ration {
-  font-size: 14px;
-  line-height: 1.2;
-  display: flex;
-  padding-left: 15px;
-  &:not(:last-child) {
-    margin-bottom: 23px;
-  }
+  font-weight: 400;
+  color: getColor("text-secondary");
 }

@@ -2,8 +2,22 @@
 
 .row {
   @include flex(space-between, center);
+  border-bottom: 2px solid getColor("border-color");
+  @include tablet {
+    border:none;
+    
+  }
+  @include desktop {
+   
+    justify-content: start;
+    align-items: baseline;
+  }
+}
+.rowLog{
+  @include flex(space-between, center);
 
   @include desktop {
+
     justify-content: start;
     align-items: baseline;
   }
@@ -54,8 +68,12 @@
   padding: 15px;
   box-sizing: border-box;
   background-color: getColor("bg-user-menu");
-
   border-top: 2px solid getColor("border-color");
+  
+  
+
+  
+  
 
   @include tablet {
     flex-basis: auto;

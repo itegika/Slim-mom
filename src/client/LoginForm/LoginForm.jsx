@@ -24,7 +24,9 @@ const LoginForm = () => {
       <h1 className={styles.title}>ВХОД</h1>
 
       <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
-        <TextField
+        <div className={styles.fieldsBox}>
+  <div className={styles.textField}> 
+         <TextField
           //   className={styles.input}
           {...inputAttr.email}
           onChange={handleChange}
@@ -33,6 +35,8 @@ const LoginForm = () => {
           placeholder="Логин"
           value={data.email}
         />
+      </div>
+      <div  className={styles.textField}>   
         <TextField
           //   className={styles.input}
           {...inputAttr.password}
@@ -42,10 +46,14 @@ const LoginForm = () => {
           placeholder="Пароль"
           value={data.password}
         />
+      </div>
+     
+        </div>
+     
         <div className={styles.btnBox}>
           {/* импортировать и заменить кнопки когда сделают компонент */}
           <Button
-            className={`${styles.button} ${styles.buttonPrimary} ${styles.regBtn}`}
+            className={`${styles.button} ${styles.buttonPrimary} ${styles.logBtn} `}
             text="Вход"
             type="submit"
             variant="primary"
@@ -54,12 +62,12 @@ const LoginForm = () => {
             to="/registration"
             //  поменять путь когда создадим объект paths
           >
-            {/* <Button
-                className={`${styles.button} ${styles.buttonSecondary} ${styles.regBtn}`}
+            <Button
+                className={`${styles.button} ${styles.buttonSecondary} `}
                 text="Регистрация"
                 type="submit"
                 variant="secondary"
-              /> */}
+              />
           </Link>
         </div>
       </form>

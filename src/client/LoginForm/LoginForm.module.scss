@@ -1,102 +1,57 @@
 @import "../../shared/styles/common.scss";
-.main {
-  padding-left: 15%;
-  max-width: 100%;
-  margin: auto;
-  // padding-top: 30px;
-  padding-bottom: 80px;
-  @include tablet {
-    // padding-top: 0;
-    padding-left: 30%;
-    // padding-top: 100px;
-    padding-bottom: 687px;
-    // max-width: 800px;
 
-    background-image: url("../../shared/images/mainPage/StrawberryLaptop.png"),
-      url("../../shared/images/mainPage/BananaLaptop.png"),
-      url("../../shared/images/mainPage/GreenLaptop.png"),
-      url("../../shared/images/mainPage/DecoreLaptop.png");
-    background-size: 308px, 491px, 531px, 553px;
-    background-repeat: no-repeat;
-    background-position: right 36px bottom 168px, bottom 0 right 0,
-      bottom 0 left 0, bottom 0 right 0;
-  }
-  @include desktop {
-    padding-left: 10%;
-    // padding-top: 292px;
-    padding-bottom: 260px;
-    // max-width: 1280px;
-    background-image: url("../../shared/images/mainPage/StrawberryDesc.png"),
-      url("../../shared/images/mainPage/BananaDesc.png"),
-      url("../../shared/images/mainPage/GreenDesc.png"),
-      url("../../shared/images/mainPage/DecoreDesc.png");
-    background-size: 362px, 500px, 746px, 602px;
-    background-repeat: no-repeat;
-    background-position: right 36px bottom 65px, top 0 right 0,
-      right 195px bottom 30px, bottom 0 right 0;
-  }
-}
-// .container {
-//   margin-left: auto;
-//   margin-right: auto;
-//   // margin-top: 83px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   flex-direction: column;
-// }
 .title {
-  font-family: "GothamPro-Bold";
-  font-style: normal;
-  font-weight: 700;
+  text-align: center;
   font-size: 14px;
   line-height: 0.92em;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 60px;
-  color: #fc842d;
+  margin-bottom: 118px;
+  color: getColor("accent");
   padding-top: 30px;
+  @include tablet{
+    text-align: start;
+
+  }
+}
+.form {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: 300px;
+  justify-content: space-between;
+  @include tablet {
+    margin: 0;
+    margin-right: auto;
+    // width: 230px;
+  }
+}
+.textField:not(:last-child){
+  margin-bottom: 40px;
+}
+.fieldsBox{
+  margin-bottom: 60px;
 }
 .btnBox {
   display: flex;
-  margin: 60px auto 0;
+  margin: 0 auto 0;
   flex-direction: column;
-  height: 108px;
+
   justify-content: space-between;
   align-items: center;
-}
-// .input {
-//   outline: none;
-// }
-@media screen and (min-width: 768px) {
-  // .container {
-  //   // margin-top: 156px;
-  //   align-items: flex-start;
-  //   justify-content: space-between;
-  //   flex-direction: column;
-  //   padding-left: 0px;
-  // }
-  .btnBox {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
+  @include tablet{
+  flex-direction: row;
+
   }
-  .regBtn:not(:last-child) {
+}
+.logBtn {
+  margin-bottom: 30px;
+  @include tablet{
+    margin: 0;
     margin-right: 30px;
   }
 }
-@media screen and (min-width: 768px) {
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: auto;
-  width: 230px;
-  height: 200px;
-  justify-content: space-between;
-}
-.regBtn {
-  margin-top: 30px;
-}
+
+

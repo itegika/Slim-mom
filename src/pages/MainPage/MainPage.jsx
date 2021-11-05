@@ -58,13 +58,13 @@ const MainPage = () => {
   const onFormSubmit = async (e) => {
     e.preventDefault();
 
-    const aaa = Object.entries(data);
-    const bbb = aaa.map(([key, value]) => [key, Number(value)]);
-    const ccc = await Object.fromEntries(bbb);
+    const arrOfArr = Object.entries(data);
+    const arrToNum = arrOfArr.map(([key, value]) => [key, Number(value)]);
+    const arrToObj = await Object.fromEntries(arrToNum);
 
     toggleModal();
     try {
-      const { data } = await getDailyRate(ccc);
+      const { data } = await getDailyRate(arrToObj);
       const { dailyRate, notAllowedProducts } = await data;
       setCalories(dailyRate);
       setProducts(notAllowedProducts.slice(0, 4));
@@ -80,7 +80,7 @@ const MainPage = () => {
     <div className={styles.main}>
       <div className="container">
         <h1 className={styles.title}>
-          Просчитай свою суточную норму калорий прямо сейчас
+          Просчитай свою суточную норму каллорий прямо сейчас
         </h1>
         {modalIsOpen && (
           <Modal onClose={toggleModal}>

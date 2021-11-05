@@ -69,6 +69,7 @@ const CheckedIsLoginCurrentUser = createAsyncThunk(
       const data = await CheckedCurrentUser(persistedToken);
       return data;
     } catch (err) {
+      // state.auth.token = "";
       return thunkAPI.rejectWithValue(err);
     }
   }

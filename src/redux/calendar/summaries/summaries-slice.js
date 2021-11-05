@@ -1,4 +1,5 @@
 import { createAction, createSlice } from "@reduxjs/toolkit";
+import { format } from "date-fns";
 import { addProduct, pickData, postDailyRate } from "./summaries-operations";
 
 const initialState = {
@@ -26,9 +27,15 @@ const summariesSlice = createSlice({
     [checkedUser]: (state, { payload }) => {
       state.id = payload.data.id;
       state.notAllowedProducts = payload.data.userData.notAllowedProducts;
+
+      const date = format(new Date(), "yyyy-MM-dd");
+      const eatenProducts = payload.data.days.find(
+        (el) => el.date === date
+      )?.eatenProducts;
+
       state.dailyRate = payload.data.userData.dailyRate;
       state.days = payload.data.days;
-      state.eatenProduct = payload.data.days.eatenProducts;
+      state.eatenProduct = eatenProducts;
       state.date = payload.date;
       // state.dayId = payload.days._id;
     },
@@ -44,12 +51,12 @@ const summariesSlice = createSlice({
     },
 
     [addProduct.fulfilled](state, { payload }) {
-      state.dayId = payload.newDay.id;
-      state.date = payload.newDay.date;
-      state.eatenProducts = payload.newDay.eatenProducts;
-      state.todaySummary = payload.newDay.newSummary;
-      state.dailyRate = payload.newDay.dailyRate;
-      state.userId = payload.newDay.userId;
+      state.dayId = payload.day.id;
+      state.date = payload.day.date;
+      state.eatenProduct = payload.day.eatenProducts;
+      state.todaySummary = payload.daySummary;
+      state.dailyRate = payload.day.dailyRate;
+      state.userId = payload.day.userId;
     },
     // [currentDate.fulfilled](state, { payload }) {
     //   state.todaySummary = payload;

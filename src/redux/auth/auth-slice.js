@@ -36,7 +36,7 @@ export const authSlice = createSlice({
       state.error = payload;
     },
     [authOperations.CheckedIsLoginCurrentUser.fulfilled](state, { payload }) {
-      state.user = payload;
+      state.user = payload.data;
     },
   },
 });

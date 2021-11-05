@@ -14,28 +14,6 @@
 
   }
 }
-.buttonGroup{
-  @include desktop{
-      @include flex(flex-start,center);
-  flex-direction:row;
-  }
-
-}
-.textField:not(:last-child){
-  margin-bottom: 40px;
-}
-.fieldsBox{
-  margin-bottom: 60px;
-}
-.btnBox {
-display: flex;
-margin: 0 auto 0;
-flex-direction: column;
-
-justify-content: space-between;
-align-items: center;
-}
-
 .form {
 
   display: flex;
@@ -73,14 +51,3 @@ align-items: center;
     margin-right: 30px;
   }
 }
-// @media screen and (min-width: 768px) {
-//   .container {
-//     // margin-top: 156px;
-//     align-items: flex-start;
-//     justify-content: space-between;
-//     flex-direction: column;
-//     padding-left: 0px;
-//   }
-  
-// }
-

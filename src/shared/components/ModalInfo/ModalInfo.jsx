@@ -12,7 +12,7 @@ const ModalInfo = ({ products, calories }) => {
         <h2 className={styles.productsTitle}> Продукты, которые вам не рекомендуется употреблять</h2>
         <ol className={styles.productsList}>
           {products.map((product) => (
-             <li className={styles.productsItem}>{product}</li>
+             <li key={product} className={styles.productsItem}>{product}</li>
           ))}
         </ol>
         <Link to="/registration" className={styles.button}>

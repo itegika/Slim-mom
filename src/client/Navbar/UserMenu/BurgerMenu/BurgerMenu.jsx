@@ -13,8 +13,12 @@ const BurgerMenu = () => {
     setShowModal(!showModal);
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   const loginMenu = items.login.map(({ id, ...props }) => (
-    <BurgerMenuItem key={id} {...props} />
+    <BurgerMenuItem closeModal={closeModal} key={id} {...props} />
   ));
 
   const menu = <div className={styles.modalItems}>{loginMenu}</div>;

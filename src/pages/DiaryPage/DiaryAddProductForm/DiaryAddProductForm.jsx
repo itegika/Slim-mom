@@ -1,31 +1,52 @@
-
 import React, { useEffect, useState } from "react";
-import AsyncSelect from "react-select/async";
+import Select from "react-select";
 import styles from "./DiaryAddProductForm.module.scss";
 import TextField from "../../../shared/components/TextField";
 import { getProducts } from "../../../shared/services/products";
 import { useDispatch } from "react-redux";
+
 import { addProduct } from "../../../redux/calendar/summaries/summaries-operations";
+import { getData } from "../../../redux/calendar/summaries/summaries-selectors";
+import { useSelector } from "react-redux";
 
-const DiaryAddProductForm = ({ onClose }) => {
+const DiaryAddProductForm = () => {
+  const dispatch = useDispatch();
+
   const [options, setOptions] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  const dispatch = useDispatch()
-    
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const data = getProducts("персик");
-  //     console.log(data);
-  //   }, 6000);
-  // }, []);
+  const [selectProduct, setSelectProduct] = useState("");
+  const [productId, setProductId] = useState("");
+  const [weight, setWeight] = useState("");
 
-  // const options = [
-  //   { kcal: "230", label: "баклажан" },
-  //   { kcal: "90", label: "лимон" },
-  //   { kcal: "130", label: "томат" },
-  // ];
+  const date = useSelector(getData);
 
-//   
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    const data = { productId, weight: Number(weight) };
+    console.log(data);
+
+    dispatch(
+      addProduct({
+        date,
+        productId,
+        weight,
+      })
+    );
+  };
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const data = await getProducts(selectProduct);
+      const newOptions = data.map(({ _id, title }) => ({
+        value: _id,
+        label: title.ru,
+      }));
+      setOptions(newOptions);
+    };
+    if (selectProduct && selectProduct.length > 2) {
+      fetchProduct();
+    }
+  }, [selectProduct]);
+
   const customStyles = {
     valueContainer: (prevStyle) => ({
       ...prevStyle,
@@ -52,79 +73,53 @@ const DiaryAddProductForm = ({ onClose }) => {
     }),
   };
 
-  // console.log(Select);
-
-  const handleSubmitForm = (e) => {
-    e.preventDefault();
-    dispatch(addProduct({
-  "date": "2020-12-31",
-  "productId": "5d51694802b2373622ff552c",
-  "weight": 100
-}))
-    // onClose();
-    console.log(e);
+  const handleProductChange = ({ value }) => {
+    setProductId(value);
   };
 
-  const handleInputChange = (newValue) => {
-    console.log(newValue);
-    // const input = newValue.replace(/\W/g, "");
-    // console.log(input);
-    setInputValue(newValue);
-    return newValue;
-  };
-
-  const loadOptions = () => {
-    // setTimeout(() => {
-    console.log("setTimeoutValue", inputValue);
-    inputValue && getProducts(inputValue);
-    // getProducts("персик");
-    // }, 7000);
+  const handleProductSearch = (newValue) => {
+    setSelectProduct(newValue);
   };
 
   const handleChangeWeight = ({ target }) => {
-    console.log(target.value);
+    setWeight(target.value);
   };
 
-  const MyComponent = () => (
-    <AsyncSelect
-      cacheOptions
-      loadOptions={loadOptions}
-      defaultOptions
-      onInputChange={handleInputChange}
-      styles={customStyles}
-      className={styles.ProductSearch}
-      placeholder="Введите название продукта"
-      components={{ IndicatorsContainer: () => null }}
-      // options={options}
-      // onInputChange={handleChangeProduct}
-    />
-  );
-
-  console.log("Інпут:", inputValue);
-
   return (
-    <>
-      <form
-        action="submit"
-        onSubmit={handleSubmitForm}
-        className={`${styles.ProductForm}`}
-      >
-        {MyComponent()}
-        <TextField
-          type="text"
-          name="weight"
-          placeholder="Граммы"
-          onChange={handleChangeWeight}
-          className={styles.ProductInput}
-        />
-        {/* <Button
-          type="submit"
-          className={styles.ProductAddBtn}
-          variant="primary"
-        /> */}
-        <button type="submit" className={styles.ProductAddBtn} />
-      </form>
-    </>
+    <form
+      action="submit"
+      onSubmit={handleSubmitForm}
+      className={styles.ProductForm}
+    >
+      <Select
+        className="basic-single"
+        classNamePrefix="select"
+        defaultValue={options[0]}
+        // isDisabled={isDisabled}
+        // isLoading={isLoading}
+        // isClearable={isClearable}
+        isSearchable={true}
+        name="product"
+        options={options}
+        // value={data.product}
+        onChange={handleProductChange}
+        onInputChange={handleProductSearch}
+      />
+      {/* {<MyComponent />} */}
+      <TextField
+        type="text"
+        name="weight"
+        placeholder="Граммы"
+        onChange={handleChangeWeight}
+        className={styles.ProductInput}
+      />
+      {/* <Button
+        type="submit"
+        className={styles.ProductAddBtn}
+        variant="primary"
+      /> */}
+      <button type="submit" className={styles.ProductAddBtn} />
+    </form>
   );
 };
 

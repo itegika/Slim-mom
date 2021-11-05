@@ -6,17 +6,15 @@ import useForm from "../../shared/hooks/useForm";
 import { initialState } from "./initialState";
 import AuthorizedPageContainer from "../../shared/containerPage/AuthorizedPage/AuthorizedPage";
 import { getUserId } from "../../redux/calendar/summaries/summaries-selectors";
-import { useSelector ,useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { postDailyRate } from "../../redux/calendar/summaries/summaries-operations";
 
 const CalculatorPage = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, () => {
     return;
   });
-  const dispatch = useDispatch()
-  const idUser = useSelector(getUserId)
- 
-  
+  const dispatch = useDispatch();
+  const idUser = useSelector(getUserId);
 
   const name = "bloodType";
   const itemsOptions = [
@@ -54,14 +52,14 @@ const CalculatorPage = () => {
     const bbb = aaa.map(([key, value]) => [key, Number(value)]);
     const ccc = await Object.fromEntries(bbb);
 
-    dispatch(postDailyRate({ccc,idUser}))
+    dispatch(postDailyRate({ ccc, idUser }));
     e.target.reset();
     handleSubmit(e);
   };
 
   return (
-      <AuthorizedPageContainer>
-      <div className={`${styles.mainDiv} container`}>
+    <AuthorizedPageContainer>
+      <div className={styles.mainDiv}>
         <h1 className={styles.title}>
           Просчитай свою суточную норму калорий прямо сейчас
         </h1>
@@ -111,9 +109,8 @@ const CalculatorPage = () => {
           </div>
           <Button text="Похудеть" className={styles.button} type="submit" />
         </form>
-    </div>
-</AuthorizedPageContainer>
- 
+      </div>
+    </AuthorizedPageContainer>
   );
 };
 

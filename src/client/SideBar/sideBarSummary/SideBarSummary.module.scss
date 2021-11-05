@@ -1,16 +1,16 @@
 @import "../../../shared/styles/common.scss";
 .summaryDiv {
-  margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
   max-width: 350px;
   @include tablet {
-    max-width: 310px;
+    width: 310px;
     margin-top: 91px;
   }
 
   @include desktop {
-    margin-top: 143px;
+    margin-top: 82px;
+    width: 330px;
   }
 }
 
@@ -42,12 +42,4 @@
 }
 
 .summary_kcal {
-  padding-right: 15px;
-  @media screen and (min-width: 768px) {
-    padding-left: 33px;
-    padding-right: 60px;
-  }
-  @media screen and (min-width: 1280px) {
-    padding-right: 175px;
-  }
 }

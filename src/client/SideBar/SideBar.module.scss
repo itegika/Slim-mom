@@ -1,5 +1,7 @@
 @import "../../shared/styles/common.scss";
 .sideBarDiv {
+  padding-left: 15px;
+  padding-right: 15px;
   background-color: getColor("bg-secondary");
   font-family: Verdana;
   font-style: normal;
@@ -8,6 +10,8 @@
   line-height: 17px;
   letter-spacing: 0.04em;
   @include tablet {
+    padding-left: 87px;
+    padding-right: 76px;
     display: flex;
     flex-direction: row;
     background-position: 128% 100%;
@@ -15,8 +19,9 @@
     background-image: url("../../shared/images/sidebar/RightSideBarImgTablet.png");
   }
   @include desktop {
-    background-position: 100% 40%;
-    background-repeat: no-repeat;
+    padding-left: 90px;
+    padding-right: 115px;
+    flex-direction: column;
     background-image: url("../../shared/images/sidebar/RightSideBarImgDesktop.png");
   }
 }

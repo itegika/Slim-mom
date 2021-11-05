@@ -5,5 +5,7 @@
   @include desktop {
     display: flex;
     flex-direction: row;
+    padding-left: 115px;
+    padding-right: 115px;
   }
 }

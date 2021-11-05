@@ -5,7 +5,7 @@ import styles from "./SideBarRation.module.scss";
 const SideBarRation = () => {
   const notAllowedProducts = useSelector(getnotAllowedProducts)
     .slice(0, 8)
-    .join(",");
+    .join(", ");
 
   return (
     <div className={styles.rationWrapper}>

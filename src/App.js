@@ -1,6 +1,8 @@
-import Navbar from "./client/Navbar";
+
 import Routes from "./navigation/Routes";
 import { useDispatch } from "react-redux";
+
+
 import authOperations from "./redux/auth/auth-operations";
 import { useEffect } from "react";
 
@@ -15,7 +17,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
       <Routes />
     </div>
   );

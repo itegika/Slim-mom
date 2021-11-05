@@ -8,7 +8,7 @@ import "./shared/styles/common.scss";
 
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(authOperations.CheckedIsLoginCurrentUser());
   }, []);

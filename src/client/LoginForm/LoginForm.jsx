@@ -19,14 +19,11 @@ const LoginForm = () => {
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.main} container`}>
+      {/* <div className={styles.container}> */}
       <h1 className={styles.title}>ВХОД</h1>
 
-      <form
-        onSubmit={handleSubmit}
-        //   className={styles.form}
-        autoComplete="off"
-      >
+      <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
         <TextField
           //   className={styles.input}
           {...inputAttr.email}
@@ -57,15 +54,16 @@ const LoginForm = () => {
             to="/registration"
             //  поменять путь когда создадим объект paths
           >
-            <Button
-              className={`${styles.button} ${styles.buttonSecondary} ${styles.regBtn}`}
-              text="Регистрация"
-              type="submit"
-              variant="secondary"
-            />
+            {/* <Button
+                className={`${styles.button} ${styles.buttonSecondary} ${styles.regBtn}`}
+                text="Регистрация"
+                type="submit"
+                variant="secondary"
+              /> */}
           </Link>
         </div>
       </form>
+      {/* </div> */}
     </div>
   );
 };

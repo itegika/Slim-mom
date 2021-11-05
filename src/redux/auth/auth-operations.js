@@ -8,14 +8,6 @@ import {
 } from "../../shared/services/auth";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
-const errorNotify = {
-  403: "This email doesn't exist or password is wrong",
-  409: "Provided email already exists, try another",
-  showAlert(code) {
-    const message = this[String(code)];
-    alert(message);
-  },
-};
 const register = createAsyncThunk(
   "auth/register",
   async (credentials, { rejectWithValue }) => {
@@ -24,7 +16,10 @@ const register = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
-      Notify.failure(errorNotify.showAlert(error.response.status));
+      if (error.response.status === 409) {
+        Notify.failure("Provided email already exists, try another");
+      }
+
       return rejectWithValue(error.message);
     }
   }
@@ -38,7 +33,9 @@ const logIn = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
-      Notify.failure(errorNotify.showAlert(error.response.status));
+      if (error.response.status === 403) {
+        Notify.failure("This email doesn't exist or password is wrong");
+      }
       return rejectWithValue(error);
     }
   }

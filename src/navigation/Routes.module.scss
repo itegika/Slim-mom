@@ -1,7 +1,7 @@
 @import "../shared/styles/common.scss";
 .App{
     margin: 0 auto;
-    padding-top: 30px;
+    // padding-top: 30px;
     padding-bottom: 80px;
     @include tablet {
       // padding-top: 100px;
@@ -28,7 +28,7 @@
       background-size: 362px, 500px, 746px, 602px;
       background-repeat: no-repeat;
       background-position: right 36px bottom 65px, top 0 right 0,
-        right 195px bottom 30px, bottom 0 right 0;
+        right 195px top 0, bottom 0 right 0;
     }
 
 }

@@ -5,21 +5,7 @@
   @include desktop {
     display: flex;
     flex-direction: row;
-  }
-}
-.mainDiv {
-  background-color: #ffffff;
-}
-.sideBarDiv {
-  background-color: getColor("bg-secondary");
-  @include tablet {
-    background-position: 128% 100%;
-    background-repeat: no-repeat;
-    background-image: url("../../images/sidebar/RightSideBarImgTablet.png");
-  }
-  @include desktop {
-    background-position: 100% 40%;
-    background-repeat: no-repeat;
-    background-image: url("../../images/sidebar/RightSideBarImgDesktop.png");
+    padding-left: 115px;
+    padding-right: 115px;
   }
 }

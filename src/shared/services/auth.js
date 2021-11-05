@@ -1,8 +1,10 @@
 import axios from "axios";
+import { format } from "date-fns";
+import { formatWithOptions } from "date-fns/fp";
 
 export const instance = axios.create({
   baseURL: "https://slimmom-backend.herokuapp.com/",
- 
+
   // headers: {
   //   Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTgyY2E3M2E2Zjk3NjY4ZjdmYzVjNGMiLCJzaWQiOiI2MTgzOTM3ZDc3NTBhODAwMDQwMGFhMmMiLCJpYXQiOjE2MzYwMTI5MjUsImV4cCI6MTYzNjAxNjUyNX0.0tJ8Apz3YaXibAAjhsr71UW7G3Kj0OHa9ePL9vvppFU`,
   // },
@@ -31,5 +33,6 @@ export async function onLogOut() {
 }
 export async function CheckedCurrentUser() {
   const { data } = await instance.get("/user");
-  return data;
+  const date = format(new Date(), "yyyy-MM-dd");
+  return { data, date };
 }

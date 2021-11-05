@@ -5,7 +5,7 @@ import styles from "./SideBar.module.scss";
 
 function SideBar() {
   return (
-    <div className={styles.SideBar}>
+    <div className={styles.sideBarDiv}>
       <SideBarSummary />
       <SideBarRation />
     </div>

@@ -3,11 +3,15 @@ import DatePicker from "react-datepicker";
 import styles from "./Datepicker.module.scss";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch } from "react-redux";
+import { pickData } from "../../../../redux/calendar/summaries/summaries-operations";
 
 const Datepicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [isOpen, setIsOpen] = useState(false);
-
+const  dispatch = useDispatch()
+         
+    //
   const handleChange = (e) => {
     setIsOpen(!isOpen);
     setStartDate(e);
@@ -15,6 +19,8 @@ const Datepicker = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setIsOpen(!isOpen);
+    dispatch(pickData({
+  "date": "2020-12-31"}))
   };
 
   const formatDate = (date) => {

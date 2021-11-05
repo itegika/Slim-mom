@@ -15,7 +15,7 @@ const summary = {
 const SideBarSummary = () => {
   // const summary = useSelector(getnotAllowedProducts);
   const summaries = useSelector(getSummariesInfo);
-  console.log(summaries);
+  // console.log(summaries);
   return (
     <>
       <div className={styles.summaryDiv}>

@@ -65,8 +65,12 @@ const summariesSlice = createSlice({
       state.userId = payload.day.userId;
     },
     [deleteProduct.fulfilled](state, { payload }) {
-      state.del = payload;
+      state.todaySummary = payload.data.newDaySummary;
+      state.eatenProduct = state.eatenProduct.filter(
+        (el) => el.id !== payload.options.eatenProductId
+      );
     },
+
     // [currentDate.fulfilled](state, { payload }) {
     //   state.todaySummary = payload;
     // },

@@ -19,7 +19,7 @@ const register = createAsyncThunk(
       if (error.response.status === 409) {
         Notify.failure("Provided email already exists, try another");
       }
-
+      Notify.failure(error.message);
       return rejectWithValue(error.message);
     }
   }
@@ -36,6 +36,7 @@ const logIn = createAsyncThunk(
       if (error.response.status === 403) {
         Notify.failure("This email doesn't exist or password is wrong");
       }
+      Notify.failure(error.message);
       return rejectWithValue(error);
     }
   }
@@ -66,7 +67,7 @@ const CheckedIsLoginCurrentUser = createAsyncThunk(
       const data = await CheckedCurrentUser(persistedToken);
       return data;
     } catch (err) {
-      // state.auth.token = "";
+      state.auth.token = "";
       return thunkAPI.rejectWithValue(err);
     }
   }

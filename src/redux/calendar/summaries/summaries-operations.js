@@ -5,6 +5,7 @@ import {
   postDay,
   postDayInfo,
 } from "../../../shared/services/day";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 export const postDailyRate = createAsyncThunk(
   "summaries/dailyRate",
@@ -13,6 +14,7 @@ export const postDailyRate = createAsyncThunk(
       const data = await getDailyRateById(credentials);
       return data;
     } catch (error) {
+      Notify.failure(error.message);
       return rejectWithValue(error);
     }
   }

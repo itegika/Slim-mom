@@ -16,7 +16,6 @@ const Datepicker = () => {
 
     setIsOpen(!isOpen);
     setStartDate(e);
-    // console.log(startDate);
     dispatch(
       pickData({
         date: chousenDate,
@@ -28,18 +27,21 @@ const Datepicker = () => {
     setIsOpen(!isOpen);
   };
 
-  const formatDate = (date) => {
-    let dd = date.getDate();
-    if (dd < 10) dd = "0" + dd;
-    let mm = date.getMonth() + 1;
-    if (mm < 10) mm = "0" + mm;
-    let yyyy = date.getFullYear();
-    return dd + "." + mm + "." + yyyy;
-  };
-
+  // const formatDate = (date) => {
+  //   let dd = date.getDate();
+  //   if (dd < 10) dd = "0" + dd;
+  //   let mm = date.getMonth() + 1;
+  //   if (mm < 10) mm = "0" + mm;
+  //   let yyyy = date.getFullYear();
+  //   return dd + "." + mm + "." + yyyy;
+  // };
+  //  const date = format(new Date(), "yyyy-MM-dd");
   return (
     <div className={styles.DatePickerSection}>
-      <span className={styles.DiaryDate}>{formatDate(startDate)}</span>
+      {/* <span className={styles.DiaryDate}>{formatDate(startDate)}</span> */}
+      <span className={styles.DiaryDate}>
+        {format(startDate, "dd-MM-yyyy")}
+      </span>
 
       <button onClick={handleClick} className={styles.DatePickerBtn}></button>
       {isOpen && (

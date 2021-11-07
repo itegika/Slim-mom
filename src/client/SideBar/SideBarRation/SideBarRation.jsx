@@ -10,7 +10,13 @@ const SideBarRation = () => {
   return (
     <div className={styles.rationWrapper}>
       <h2 className={styles.rationTitle}>Нерекомендуемые продукты</h2>
-      <p className={styles.ration}>{notAllowedProducts}</p>
+      <p className={styles.ration}>
+        {notAllowedProducts ? (
+          notAllowedProducts
+        ) : (
+          <h2>Здесь будет отображаться ваш рацион</h2>
+        )}
+      </p>
     </div>
   );
 };

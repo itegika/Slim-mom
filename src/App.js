@@ -1,17 +1,17 @@
-
 import Routes from "./navigation/Routes";
-import { useDispatch } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
 
 import authOperations from "./redux/auth/auth-operations";
 import { useEffect } from "react";
 import "./shared/styles/common.scss";
+import { fetchToken } from "./redux/auth/auth-selectors";
 
 function App() {
   const dispatch = useDispatch();
+  const isLoggin = useSelector(fetchToken);
 
   useEffect(() => {
-    dispatch(authOperations.CheckedIsLoginCurrentUser());
+    isLoggin && dispatch(authOperations.CheckedIsLoginCurrentUser());
   }, []);
 
   return (

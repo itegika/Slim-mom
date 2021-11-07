@@ -1,5 +1,4 @@
 import { createAction, createSlice } from "@reduxjs/toolkit";
-import { format } from "date-fns";
 import {
   addProduct,
   deleteProduct,
@@ -12,7 +11,6 @@ const initialState = {
   date: "",
   notAllowedProducts: [],
   days: [],
-  dailyRate: "",
   todaySummary: null,
   userId: "",
   eatenProduct: [],
@@ -34,19 +32,18 @@ const summariesSlice = createSlice({
     [checkedUser]: (state, { payload }) => {
       state.id = payload.data.id;
       state.notAllowedProducts = payload.data.userData.notAllowedProducts;
-      state.dailyRate = payload.data.userData.dailyRate;
       state.days = payload.data.days;
       state.date = payload.date;
 
-      const currentDay = payload.data.days.find((el) => el.date === state.date);
+      const currentDay = payload.data.days?.find(
+        (el) => el.date === state.date
+      );
 
-      const eatenProducts = currentDay.eatenProducts;
-      state.eatenProduct = eatenProducts;
-      state.todaySummary = currentDay.daySummary;
-      state.dayId = currentDay._id;
+      state.eatenProduct = currentDay?.eatenProducts;
+      state.todaySummary = currentDay?.daySummary;
+      state.dayId = currentDay?._id;
     },
     [postDailyRate.fulfilled](state, { payload }) {
-      state.dailyRate = payload.data.dailyRate;
       state.notAllowedProducts = payload.data.notAllowedProducts;
       state.todaySummary = payload.data.summaries;
     },
@@ -57,12 +54,11 @@ const summariesSlice = createSlice({
     },
 
     [addProduct.fulfilled](state, { payload }) {
-      state.dayId = payload.day.id;
-      state.date = payload.day.date;
-      state.eatenProduct = payload.day.eatenProducts;
-      state.todaySummary = payload.daySummary;
-      state.dailyRate = payload.day.dailyRate;
-      state.userId = payload.day.userId;
+      state.dayId = payload.day?.id;
+      state.date = payload.day?.date;
+      state.eatenProduct = payload.day?.eatenProducts;
+      state.todaySummary = payload?.daySummary;
+      state.userId = payload.day?.userId;
     },
     [deleteProduct.fulfilled](state, { payload }) {
       state.todaySummary = payload.data.newDaySummary;

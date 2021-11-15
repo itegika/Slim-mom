@@ -60,9 +60,7 @@ const CalculatorPage = () => {
   return (
     <AuthorizedPageContainer>
       <div className={styles.mainDiv}>
-        <h1 className={styles.title}>
-          Просчитай свою суточную норму калорий прямо сейчас
-        </h1>
+        <h1 className={styles.title}>Узнай свою суточную норму калорий</h1>
         <form onSubmit={onFormSubmit} className={styles.form}>
           <div className={styles.fields}>
             <div className={styles.field}>

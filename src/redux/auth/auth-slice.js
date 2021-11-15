@@ -38,6 +38,9 @@ export const authSlice = createSlice({
     [authOperations.CheckedIsLoginCurrentUser.fulfilled](state, { payload }) {
       state.user = payload.data;
     },
+    [authOperations.CheckedIsLoginCurrentUser.rejected](state, { payload }) {
+      state.token = "";
+    },
   },
 });
 

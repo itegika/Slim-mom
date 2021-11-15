@@ -10,7 +10,9 @@
   }
 
   @include desktop {
-    margin-top: 82px;
+    // margin-top: 82px;
+    margin-top: 0;
+    margin-right: 0;
     width: 330px;
   }
 }

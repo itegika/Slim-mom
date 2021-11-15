@@ -9,7 +9,7 @@ import styles from "./SideBarSummary.module.scss";
 const SideBarSummary = () => {
   const summariesData = useSelector(getSummariesInfo);
   const getDate = useSelector(getData);
-  const currentDate = getDate.split("-").reverse().join("-");
+  const currentDate = getDate?.split("-")?.reverse()?.join("-");
 
   const summ = {
     kcalLeft: 0,
@@ -17,8 +17,8 @@ const SideBarSummary = () => {
     dailyRate: 0,
     percentsOfDailyRate: 0,
   };
-  const summaries = summariesData ? summariesData : summ;
-  console.log(summariesData);
+  const summaries = summariesData?.length > 1 ? summariesData : summ;
+
   return (
     <>
       <div className={styles.summaryDiv}>

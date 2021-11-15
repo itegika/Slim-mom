@@ -1,8 +1,10 @@
 @import "../shared/styles/common.scss";
 .App {
   margin: 0 auto;
+  height: 100vh;
   // padding-top: 30px;
   padding-bottom: 80px;
+
   @include tablet {
     // padding-top: 100px;
     padding-bottom: 530px;
@@ -19,22 +21,23 @@
   }
   @include desktop {
     // padding-top: 292px;
-    padding-bottom: 93px;
+    // padding-bottom: 93px;
     // max-width: 1280px;
     background-image: url("../shared/images/mainPage/StrawberryDesc.png"),
       url("../shared/images/mainPage/BananaDesc.png"),
       url("../shared/images/mainPage/GreenDesc.png"),
       url("../shared/images/mainPage/DecoreDesc.png");
-    background-size: 362px, 500px, 746px, 602px;
+    background-size: 362px, 500px, 746px, 602px, cover;
     background-repeat: no-repeat;
-    background-position: right 36px bottom 65px, top 0 right 0,
-      right 195px top 0, bottom 0 right 0;
+    background-position: right 36px bottom 0px, top 0 right 0, right 195px top 0,
+      bottom 0 right 0;
   }
 }
 .sideBarDiv {
+  height: 100vh;
   @include desktop {
     background-image: url("../shared/images/sidebar/RightSideBarImgDesktop.png"),
-      linear-gradient(to right, #ffffff 51%, getColor("bg-user-menu") 51%);
+      linear-gradient(to right, #ffffff 58%, getColor("bg-user-menu") 51%);
     background-repeat: no-repeat;
     background-position: 100% 100%;
   }
